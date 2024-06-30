@@ -4,7 +4,7 @@ import PasswordInput from "@/components/PasswordInput"
 import { userDetailsType } from "@/types/types"
 import { FormEvent, useState } from "react"
 
-const page = () => {
+const Page = () => {
 
   const [userDetails, setUserDetails] = useState<userDetailsType>({
     email: '',
@@ -106,4 +106,4 @@ const handleSignUp = async (e:FormEvent) => {
       )
 }
 
-export default page
+export default Page

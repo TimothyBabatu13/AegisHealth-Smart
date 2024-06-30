@@ -6,7 +6,7 @@ import { userDetailsType } from "@/types/types";
 import Link from "next/link"
 import { FormEvent, useState } from "react";
 
-const page = () => {
+const Page = () => {
     
     const [userDetails, setUserDetails] = useState<userDetailsType>({
         email: '',
@@ -106,4 +106,4 @@ const page = () => {
       )
 }
 
-export default page
+export default Page
