@@ -1,0 +1,11 @@
+import { useContext } from 'react'
+
+export const useContextHook = (Context: any) => {
+    
+    const context = useContext(Context);
+    if(context === null ) {
+        throw new Error('using context hook outside it container');
+    };
+    
+    return context;
+}

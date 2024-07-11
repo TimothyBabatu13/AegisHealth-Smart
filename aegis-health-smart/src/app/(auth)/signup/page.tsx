@@ -1,6 +1,7 @@
 'use client'
 import EmailInput from "@/components/EmailInput"
 import PasswordInput from "@/components/PasswordInput"
+import { useToast } from "@/components/ui/use-toast"
 import { userDetailsType } from "@/types/types"
 import { FormEvent, useState } from "react"
 
@@ -10,7 +11,7 @@ const Page = () => {
     email: '',
     password: '',
 })
-
+const { toast } = useToast()
 const handleChange = (e: any) : void => {
     setUserDetails(prev => ({
         ...prev,
@@ -20,7 +21,6 @@ const handleChange = (e: any) : void => {
 
 const handleSignUp = async (e:FormEvent) => {
     e.preventDefault()
-    
     try {
       const res = await fetch("api/signup", {
         method: 'POST',
@@ -32,8 +32,13 @@ const handleSignUp = async (e:FormEvent) => {
           password: userDetails.password
         }),
       })
-      const result = await res.json() 
+      const { result, status } = await res.json() 
       console.log(result)
+      toast({
+        description: result,
+        variant: status === 500 ? 'destructive':'default',
+      })
+     
 
     } catch (error) {
       console.log(error)

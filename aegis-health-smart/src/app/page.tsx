@@ -1,7 +1,13 @@
 
-import HomeScreen from "@/components/HomeScreen";
+// import HomeScreen from "@/components/HomeScreen";
+import ProtectedRoute from "@/components/ProtectedRoute";
+import UserId from "@/components/UserId";
 export default function Home() {
   return (
-    <HomeScreen />
+    <ProtectedRoute>
+      <main>
+        Welcome, user with id: <UserId />
+      </main>
+    </ProtectedRoute>
   );
 }

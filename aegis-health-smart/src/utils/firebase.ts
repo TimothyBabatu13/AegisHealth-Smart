@@ -1,6 +1,6 @@
 import { app } from "@/config/firebaseConfig";
 import { userDetailsType } from "@/types/types";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, User } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, User, onAuthStateChanged } from "firebase/auth";
 
 interface CreateNewAccountType {
   data: User|any,
@@ -13,7 +13,7 @@ export const CreateNewAccount = async (data : userDetailsType) : Promise<CreateN
     return createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      return {data: user, code: 201};
+      return {data: 'Your account has been created', code: 201};
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -35,4 +35,24 @@ export const LoginToExistingAccount = async ( data: userDetailsType ) : Promise<
     const errorCode = err.code;
     return {data:errorMessage, code: 500}
   })
+}
+
+export const ValidateAuth =  () => {
+  const auth = getAuth(app);
+  let data;  
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/auth.user
+    const uid = user.uid;
+    return true;
+    // ...
+  } else {
+    // User is signed out
+    // ...
+    console.log('user is signed out')
+    return false;
+  }
+});
+return data;
 }
