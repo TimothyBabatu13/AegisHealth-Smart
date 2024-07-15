@@ -2,13 +2,10 @@
 
 import { useAuthContextProvider } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
-import { ReactNode, useEffect, useLayoutEffect } from "react";
-// import { useRouter } from "next/router";
+import { useEffect } from "react";
+import Loader from "./Loader";
 
-interface ProtectedRouteType {
-  children:any
-  //(props: any, deprecatedLegacyContext?: any) => ReactNode
-}
+
 const ProtectedRoute = ({
     children,
   }: Readonly<{
@@ -20,9 +17,8 @@ const ProtectedRoute = ({
     useEffect(() => {
       if(id === null) route.push('/signup')
     } , [id])
-    // if(id === null) return route.push('/signup')
       
-    // if(id === null) return <h1>Loading...</h1>
+    if(id === null) return <Loader />
   return (
     <section>
       {children}

@@ -1,4 +1,5 @@
 // import { useContextHook } from '@/utils/useContext';
+import Loader from '@/components/Loader';
 import { app } from '@/config/firebaseConfig';
 import { AuthContextType } from '@/types/types';
 import { useContextHook } from '@/utils/useContext';
@@ -30,7 +31,7 @@ const AuthContext = ({
       });
     }, [])
 
-    if(id === '') return <h1 className='h-[100vh] w-[100vw] flex justify-center items-center bg-black text-white'>Loading...</h1>
+    if(id === '') return <Loader />
   return (
     <Context.Provider value={{id, setId }}>
         {children}
