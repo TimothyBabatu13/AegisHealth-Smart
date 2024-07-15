@@ -16,7 +16,7 @@ const ProtectedRoute = ({
 
     useEffect(() => {
       if(id === null) route.push('/signup')
-    } , [id])
+    } , [id, route])
       
     if(id === null) return <Loader />
   return (
