@@ -3,6 +3,8 @@ import EmailInput from "@/components/EmailInput"
 import PasswordInput from "@/components/PasswordInput"
 import { useToast } from "@/components/ui/use-toast"
 import { userDetailsType } from "@/types/types"
+import formatFirebaseError from "@/utils/formatFirebaseError"
+import Link from "next/link"
 import { FormEvent, useState } from "react"
 
 const Page = () => {
@@ -10,42 +12,45 @@ const Page = () => {
   const [userDetails, setUserDetails] = useState<userDetailsType>({
     email: '',
     password: '',
-})
-const { toast } = useToast()
-const handleChange = (e: any) : void => {
-    setUserDetails(prev => ({
-        ...prev,
-        [e.target.name]: e.target.value
-    }))
-}
+  })
+  const [loading, setIsLoading] = useState<boolean>(false);
+  const { toast } = useToast()
+  const handleChange = (e: any) : void => {
+      setUserDetails(prev => ({
+          ...prev,
+          [e.target.name]: e.target.value
+      }))
+  }
 
-const handleSignUp = async (e:FormEvent) => {
-    e.preventDefault()
-    try {
-      const res = await fetch("api/signup", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: userDetails.email,
-          password: userDetails.password
-        }),
-      })
-      const { result, status } = await res.json() 
-      console.log(result)
-      toast({
-        description: result,
-        variant: status === 500 ? 'destructive':'default',
-      })
-     
-
-    } catch (error) {
-      console.log(error)
-    }
+  const handleSignUp = async (e:FormEvent) => {
+      e.preventDefault()
+      setIsLoading(true);
+      try {
+        const res = await fetch("api/signup", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: userDetails.email,
+            password: userDetails.password
+          }),
+        })
+        const { result, status } = await res.json() 
+        console.log(result)
+        toast({
+          description: formatFirebaseError(result),
+          variant: status === 500 ? 'destructive':'default',
+        })
+        setIsLoading(false)
       
-    
-}
+
+      } catch (error) {
+        console.log(error)
+      }
+        
+      
+  }
     return (
         <>
           {/*
@@ -79,9 +84,9 @@ const handleSignUp = async (e:FormEvent) => {
                       Password
                     </label>
                     <div className="text-sm">
-                      <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                      <Link href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
                         Forgot password?
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className="mt-2">
@@ -92,7 +97,8 @@ const handleSignUp = async (e:FormEvent) => {
                 <div>
                   <button
                     type="submit"
-                    className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className={`flex w-full justify-center rounded-md ${loading ? 'bg-indigo-500' : 'bg-indigo-600'} px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
+                    disabled={loading}
                   >
                     Sign up
                   </button>
@@ -101,9 +107,9 @@ const handleSignUp = async (e:FormEvent) => {
     
               <p className="mt-10 text-center text-sm text-gray-500">
                Have an account?{' '}
-                <a href="/signin" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+                <Link href="/signin" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
                   sign in here
-                </a>
+                </Link>
               </p>
             </div>
           </div>

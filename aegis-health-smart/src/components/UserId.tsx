@@ -1,10 +1,18 @@
 'use client';
 import { useAuthContextProvider } from "@/context/AuthContext"
+import { useState } from "react";
 
 const UserId = () => {
-    const { id } = useAuthContextProvider();
+    const { id, setId } = useAuthContextProvider();
+    const [num ,setNum] = useState<number>(0)
+
   return (
-    <div>{id}</div>
+    <>
+    {id}{num}
+      <div>
+      <button onClick={()=>{setId('hhh'); setNum(prev => prev+1)}}>click</button>
+      </div>
+    </>
   )
 }
 

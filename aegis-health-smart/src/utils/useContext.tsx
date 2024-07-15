@@ -1,6 +1,7 @@
-import { useContext } from 'react'
+import { AuthContextType } from '@/types/types';
+import { Context, useContext } from 'react'
 
-export const useContextHook = (Context: any) => {
+export const useContextHook = (Context: Context<AuthContextType | null>) => {
     
     const context = useContext(Context);
     if(context === null ) {

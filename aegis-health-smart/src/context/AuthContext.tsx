@@ -1,13 +1,10 @@
 // import { useContextHook } from '@/utils/useContext';
 import { app } from '@/config/firebaseConfig';
+import { AuthContextType } from '@/types/types';
 import { useContextHook } from '@/utils/useContext';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 
-
-interface AuthContextType {
-    id : string
-}
 
 const Context = createContext<AuthContextType | null>(null)
 
@@ -17,22 +14,25 @@ const AuthContext = ({
     children: React.ReactNode;
   }>) => {
 
-    const [id, setId] = useState<string>('');
+    const [id, setId] = useState<string|null>('');
+
     useEffect(()=> {
       const auth = getAuth(app);
       onAuthStateChanged(auth, (user) => {
           if (user) {
           const uid = user.uid;
-          console.log(uid)
-          setId(uid)
+          console.log(uid);
+          setId(uid);
       } else {
-          setId('')
-          console.log('...not login')
+          setId(null)
+          // console.log('...not login')
       }
       });
     }, [])
+
+    if(id === '') return <h1 className='h-[100vh] w-[100vw] flex justify-center items-center bg-black text-white'>Loading...</h1>
   return (
-    <Context.Provider value={{id}}>
+    <Context.Provider value={{id, setId }}>
         {children}
     </Context.Provider>
   )
@@ -40,19 +40,5 @@ const AuthContext = ({
 
 export default AuthContext;
 
-// export const useContextHook = (Context: any) => {
-//   const context = useContext(Context);
-//   if(context === null ) {
-//       throw new Error('using context hook outside it container');
-//   };
-  
-//   return context;
-// // }
-// export const useAuthContextProvider = () => {
-//   const context = useContext(Context);
-//   if(context === null ) {
-//       throw new Error('using context hook outside it container');
-//   };
-//   return context
-// };
-export const useAuthContextProvider : any = () => useContextHook(Context)
+
+export const useAuthContextProvider : ()=>AuthContextType  = () => useContextHook(Context)
