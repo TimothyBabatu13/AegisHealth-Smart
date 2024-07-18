@@ -2,7 +2,9 @@
 
 import EmailInput from "@/components/EmailInput";
 import PasswordInput from "@/components/PasswordInput";
+import { useToast } from "@/components/ui/use-toast";
 import { userDetailsType } from "@/types/types";
+import formatFirebaseError from "@/utils/formatFirebaseError";
 import Link from "next/link"
 import { FormEvent, useState } from "react";
 
@@ -12,6 +14,8 @@ const Page = () => {
         email: '',
         password: '',
     })
+    const [loading, setIsLoading] = useState<boolean>(false);
+    const { toast } = useToast()
 
     const handleChange = (e: any) : void => {
         setUserDetails(prev => ({
@@ -22,6 +26,7 @@ const Page = () => {
     
     const handleSignIn = async (e:FormEvent) => {
         e.preventDefault()
+        setIsLoading(true)
         
         try {
           const res = await fetch("api/signin", {
@@ -34,8 +39,16 @@ const Page = () => {
               password: userDetails.password
             }),
           })
-          const result = await res.json() 
-          console.log(result)
+          const { result, status } = await res.json() 
+ 
+          console.log(result, status)
+
+          toast({
+            description: formatFirebaseError(result),
+            variant: status === 500 ? 'destructive':'default',
+          })
+
+          setIsLoading(false)
 
         } catch (error) {
           console.log(error)
@@ -87,7 +100,8 @@ const Page = () => {
                 <div>
                   <button
                     type="submit"
-                    className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    disabled={loading}
+                    className={`flex w-full justify-center rounded-md  ${loading ? 'bg-indigo-500' : 'bg-indigo-600'} px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
                   >
                     Sign in
                   </button>

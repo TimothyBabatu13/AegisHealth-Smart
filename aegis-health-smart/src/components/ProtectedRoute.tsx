@@ -15,10 +15,10 @@ const ProtectedRoute = ({
     const { id } = useAuthContextProvider();
 
     useEffect(() => {
-      if(id === null) route.push('/signup')
+      // if(id === null) route.push('/signup')
     } , [id, route])
       
-    if(id === null) return <Loader />
+    // if(id === null) return <Loader />
   return (
     <section>
       {children}
