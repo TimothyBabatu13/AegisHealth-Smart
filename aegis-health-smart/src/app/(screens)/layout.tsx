@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import NavBar from "@/components/NavBar";
-import PageWrapper from "@/components/PageWrapper";
 import ProtectedRoute from "@/components/ProtectedRoute";
 
 const layout = ({
@@ -15,9 +14,7 @@ const layout = ({
             <NavBar />
             <section className="flex-1">
                 <Header />
-                <PageWrapper>
-                    {children}
-                </PageWrapper>
+                {children}
             </section>
         </main>
     </ProtectedRoute>
