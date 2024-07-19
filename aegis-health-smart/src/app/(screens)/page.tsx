@@ -1,20 +1,23 @@
 import PageWrapper from "@/components/PageWrapper";
 import MedicineSchedule from "./components/MedicineSchedule";
+import FindSpecialist from "./components/FindSpecialist";
+import MentalSupport from "./components/MentalSupport";
+import SmallPageWrapper from "@/components/SmallPageWrapper";
+import UpcomingAppointment from "./components/UpcomingAppointment";
 
 export default function Home() {
   return (
       <section className="flex">
         <PageWrapper>
-
           <h2 className="text-[28px] font-semibold leading-[33.6px]">Hello, Doris👋</h2>
           <h3 className="text-[15px] text-[#141414CC] font-normal leading-[20px]">Let’s stay on top your health</h3>
           <MedicineSchedule />
+          <FindSpecialist />
+          <MentalSupport />
         </PageWrapper>
-        {/* <div className="border-[0.7px] border-[#E4E7EC]"> */}
-        {/* </div> */}
-        <div>
-          HEkoo
-        </div>
+       <SmallPageWrapper>
+        <UpcomingAppointment />
+       </SmallPageWrapper>
       </section>
   );
 }

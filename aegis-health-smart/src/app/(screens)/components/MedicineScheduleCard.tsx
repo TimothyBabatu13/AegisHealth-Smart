@@ -7,12 +7,13 @@ interface MedicineScheduleCardType {
     time: string,
     isUsed: boolean,
     active: boolean,
-    className: string
+    className: string,
+    handleClick: ()=> void
 }
 
-const MedicineScheduleCard = ({ name, qty, time, isUsed, active, className } : MedicineScheduleCardType) => {
+const MedicineScheduleCard = ({ name, qty, time, isUsed, active, className, handleClick } : MedicineScheduleCardType) => {
   return (
-    <div role="button" className={`w-[220px] cursor-pointer ${active ? 'bg-[#FEEDE7]' : 'border-[0.5px] border-[#E0E3EB]'} ${className} h-[121px] rounded-[10px] py-[15px] px-5`}>
+    <div role="button" onClick={handleClick} className={`w-[220px] cursor-pointer ${active ? 'bg-[#FEEDE7]' : 'border-[0.5px] border-[#E0E3EB]'} ${className} h-[121px] rounded-[10px] py-[15px] px-5`}>
         <div className="flex items-center justify-between">
             <h4 className="text-[15px] text-[#141414] font-medium leading-[21.75px]">{name}</h4>
             <button><ThreeDotsIcon /></button>
