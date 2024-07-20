@@ -1,5 +1,6 @@
 import { TimeIcon, VerifiedTickIcon, ZoomIcon } from "@/components/Svgs"
 import Image from "next/image"
+import Link from "next/link"
 
 interface ZoomCardType {
     day: string,
@@ -7,9 +8,10 @@ interface ZoomCardType {
     name: string,
     isVerified: boolean,
     type: string,
-    img: string
+    img: string,
+    id: string
 }
-const ZoomCard = ({ day, time, name, isVerified, type, img } : ZoomCardType) => {
+const ZoomCard = ({ day, time, name, isVerified, type, img, id } : ZoomCardType) => {
   return (
     <div className="mt-[39px] border-[0.5px] border-[#E0E3EB] rounded-[10px] py-4 px-5">
        <h1 className="text-base font-semibold text-[#141414] leading-[26.5px] mb-3">{day}</h1>
@@ -39,7 +41,7 @@ const ZoomCard = ({ day, time, name, isVerified, type, img } : ZoomCardType) => 
        <div className="h-[0.5px] w-full bg-[#E0E3EB]"/>
        <div className="mt-[20.5px] flex justify-between">
             <button className="text-sm font-semibold text-[#141414] leading-[21px] py-2 px-4 border border-[#E0E3EB] rounded-[10px]">Reschedule</button>
-            <button className="text-[#291ED7] text-sm font-semibold leading-[21px] py-2 px-4 bg-[#EAE9FC] rounded-[10px]">Join Now</button>
+            <Link href={`/appointment/join/${id}`} className="text-[#291ED7] text-sm font-semibold leading-[21px] py-2 px-4 bg-[#EAE9FC] rounded-[10px]">Join Now</Link>
        </div>
     </div>
   )

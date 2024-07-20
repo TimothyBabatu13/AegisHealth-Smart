@@ -12,7 +12,7 @@ const NavBar = () => {
             text: 'Home',
             url: '/',
             id: 'aaa',
-            icon: <HomeIcon active={activeLink === '/'}/>
+            icon: <HomeIcon active={activeLink === '/'}/>,
         },
         {
             text: 'Appointments',
@@ -40,6 +40,9 @@ const NavBar = () => {
         }
     ]
 
+    const toCheckIfURLMatches = (url: string) => {
+        return pathName.match(url)
+    }
     useEffect(()=>{
         setActiveLink(pathName);
     }, [pathName])
@@ -47,7 +50,7 @@ const NavBar = () => {
   return (
     <nav className="h-[100vh] border-r-[0.7px] border-r-[#E4E7EC] px-2 flex flex-col w-[248px]">
         <h1 className="mb-8">Logo</h1>
-        {links.map(link => <Link className={`flex items-center py-3 px-4 text-sm text-[#141414] leading-5 ${activeLink === link.url ? 'bg-[#F2F2FD] rounded-r-[10px] shadow-[#00663547] border-l-2 border-l-[#291ED7] font-medium' : 'font-normal'}`} href={link.url} key={link.id}> <span className="mr-3">{link.icon}</span>{link.text}</Link>)}
+        {links.map((link, id) => <Link className={`flex items-center py-3 px-4 text-sm text-[#141414] leading-5 ${activeLink === link.url || id === 1 && toCheckIfURLMatches(link.url)  ? 'bg-[#F2F2FD] rounded-r-[10px] shadow-[#00663547] border-l-2 border-l-[#291ED7] font-medium' : 'font-normal'}`} href={link.url} key={link.id}> <span className="mr-3">{link.icon}</span>{link.text}</Link>)}
         {/* <div className="mt-auto py-5 px-[21px] flex items-center">
             <div className="h-10 w-10 rounded-full bg-[#FFE7CC] relative">
                 <div className="h-[10px] w-[10px] bg-[#04802E] rounded-full absolute bottom-0 right-0"></div>

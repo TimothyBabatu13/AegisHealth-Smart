@@ -11,6 +11,7 @@ const Schedules = () => {
             type="General Practioner "
             time="11.30 - 12.00 (30 min)"
             name="Dr. Hardy Octavian"
+            id="bbb"
         />
     </div>
   )

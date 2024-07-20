@@ -1,10 +1,12 @@
 import { TimeIcon, ZoomIcon } from "@/components/Svgs"
+import Link from "next/link"
 
-const ScheduleCard = ({ day, time, name, type } : {
+const ScheduleCard = ({ day, time, name, type, id } : {
     day: string, 
     time: string, 
     name: string, 
-    type: string
+    type: string,
+    id: string
 }) => {
   return (
     <div className="mt-[39px] border-[0.5px] border-[#E0E3EB] rounded-[10px] py-4 px-5">
@@ -25,7 +27,7 @@ const ScheduleCard = ({ day, time, name, type } : {
        <div className="h-[0.5px] w-full bg-[#E0E3EB]"/>
        <div className="mt-[20.5px] flex justify-between">
             <button className="text-sm font-semibold text-[#141414] leading-[21px] py-2 px-4 border border-[#E0E3EB] rounded-[10px]">Reschedule</button>
-            <button className="text-[#1BAD55] text-sm font-semibold leading-[21px] py-2 px-4 bg-[#E9FCF0] rounded-[10px]">Join Now</button>
+            <Link href={`/appointment/join/${id}`} className="text-[#1BAD55] text-sm font-semibold leading-[21px] py-2 px-4 bg-[#E9FCF0] rounded-[10px]">Join Now</Link>
        </div>
     </div>
   )

@@ -16,6 +16,7 @@ const UpcomingAppointment = () => {
             isVerified
             type="General Practioner "
             img="/upcomingappointment.jpg"
+            id='aaa'
         />
         <div className="mt-[39px]">
             <h3 className="text-lg text-[#141414] font-semibold leading-[21.6px] mb-5">Upcoming Sessions</h3>

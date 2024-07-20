@@ -1,12 +1,12 @@
 'use client';
 import { Calendar } from "@/components/ui/calendar"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 
 const CalendarComponent = () => {
     const [date, setDate] = useState<Date | undefined>(new Date())
-    console.log(date)
+    
     return (
     <Calendar
         mode="single"
