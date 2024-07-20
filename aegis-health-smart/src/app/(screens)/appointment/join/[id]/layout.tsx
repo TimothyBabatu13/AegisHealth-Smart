@@ -24,7 +24,7 @@ const layout = ({
             {children}
         </PageWrapper>
         <SmallPageWrapper>
-            Hello How're you?
+            Hello How&apos;re you?
         </SmallPageWrapper>
         
     </div>
