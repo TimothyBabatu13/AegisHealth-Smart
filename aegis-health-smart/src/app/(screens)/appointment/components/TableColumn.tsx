@@ -36,6 +36,7 @@ export const columns: ColumnDef<Payment>[] = [
         <TableHospital 
             hospital={row.original.hospital}
             address={row.original.address}
+            width
         />
     )
   },

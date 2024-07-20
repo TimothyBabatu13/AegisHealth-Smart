@@ -1,7 +1,7 @@
-import { AuthContextType } from '@/types/types';
+import { AppointmentTableContextType, AuthContextType } from '@/types/types';
 import { Context, useContext } from 'react'
 
-export const useContextHook = (Context: Context<AuthContextType | null>) => {
+export const useContextHook = (Context: Context<AuthContextType | AppointmentTableContextType | null>) => {
     
     const context = useContext(Context);
     if(context === null ) {
