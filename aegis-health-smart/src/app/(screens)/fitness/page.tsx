@@ -1,7 +1,9 @@
 
 const page = () => {
   return (
-    <section>Fitness</section>
+    <section>
+      <h1>Fitness activity tracker</h1>
+    </section>
   )
 }
 
