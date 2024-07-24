@@ -39,20 +39,22 @@ export const LoginToExistingAccount = async ( data: userDetailsType ) : Promise<
 
 export const ValidateAuth =  () => {
   const auth = getAuth(app);
-  let data;  
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/auth.user
-    const uid = user.uid;
-    return true;
-    // ...
-  } else {
-    // User is signed out
-    // ...
-    console.log('user is signed out')
-    return false;
-  }
+
+  return new Promise((resolve, reject) => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/auth.user
+      const uid = user.uid;
+      return resolve({c: true, id: uid});
+      // ...
+    } else {
+      // User is signed out
+      // ...
+      console.log('user is signed out')
+      reject({c:false, id:null})
+      return false;
+    }
+  })
 });
-return data;
 }

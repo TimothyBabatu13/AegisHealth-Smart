@@ -11,6 +11,8 @@ import Link from "next/link"
 import { ActivityIcon, AppointmentIcon, HomeIcon, MentalSupportIcon, SymptomCheckerIcon } from "./Svgs"
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { MobileSearch } from "./MobileSearch";
+
   
 const MobileNavBar = () => {
     const [activeLink, setActiveLink] = useState<string>('');
@@ -55,7 +57,8 @@ const MobileNavBar = () => {
         setActiveLink(pathName);
     }, [pathName])
   return (
-    <nav className="min-[1220px]:hidden">
+    <nav className="min-[1220px]:hidden flex items-center">
+        <MobileSearch />
         <Sheet>
             <SheetTrigger>
                 <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
