@@ -30,6 +30,7 @@ const FindSpecialistCard = ({ img, name, specialization, active, className } : F
             className="rounded-[20px] mb-[13px]"
             src={img}
             alt={`${name} image`}
+            priority
         />
         <h4 className="text-[#141414] text-sm font-semibold leading-[21px] mb-[5px]">{name}</h4>
         <h5 className="text-xs text-[#141414CC] font-medium leading-[21px] mb-[5px]">{specialization}</h5>

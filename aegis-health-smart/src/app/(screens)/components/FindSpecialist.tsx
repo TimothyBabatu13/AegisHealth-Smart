@@ -45,7 +45,7 @@ const FindSpecialist = () => {
         <div className={`flex w-full overflow-x-scroll`}>
             {data.map(({name, active, img,specialization}, id) => <FindSpecialistCard key={id} name={name} active={active} img={img} specialization={specialization} className={`${id === data.length -1 ? '' : 'mr-5'}`} />)}
         </div>
-        <ScrollButtons />
+        {/* <ScrollButtons /> */}
         
     </div>
   )
