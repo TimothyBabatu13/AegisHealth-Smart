@@ -16,7 +16,7 @@ const layout = ({
     
     const { id } = params;
   return (
-    <div className="flex">
+    <div className="min-[1220px]:flex">
         <PageWrapper>
             <DoctorInformation />
             <VideoCallScreen />
