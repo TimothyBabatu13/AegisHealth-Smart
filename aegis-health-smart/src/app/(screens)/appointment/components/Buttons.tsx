@@ -54,7 +54,7 @@ const Buttons = () => {
     }
   return (
     <>
-        <div className="bg-[#FCFCFD] border-b border-b-[#E4E7EC] py-[10px] px-5 rounded-[4px] mb-[30px]">
+        <div className="bg-[#FCFCFD] border-b border-b-[#E4E7EC] py-[10px] min-[616px]:px-5 rounded-[4px] mb-[30px]">
             {
                 data.map((link, no) => <Button active={active === no} key={no} text={link.text} action={()=>link.action(no)} />)
             }

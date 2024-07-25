@@ -8,7 +8,7 @@ export default function Table() {
   const { tableData }= useAppointmentTableHook();
   
   return (
-    <div className="container mx-auto py-10">
+    <div className="min-[710px]:container min-[710px]:mx-auto py-10">
       <DataTable columns={columns} data={tableData} />
     </div>
   )

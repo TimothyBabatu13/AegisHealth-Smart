@@ -12,7 +12,7 @@ const CalendarComponent = () => {
         mode="single"
         selected={date}
         onSelect={setDate}
-        className="rounded-md border"
+        className="rounded-md border flex justify-center"
         classNames={{day_selected: 'bg-[#1BAD55] text-[#FFFFFF] rounded-[50%] flex items-center justify-centeR'}}
     />
 )

@@ -10,7 +10,7 @@ const layout = ({
 
   return (
     <ProtectedRoute>
-        <main className="flex">
+        <main className="min-[1220px]:flex">
             <NavBar />
             <section className="flex-1">
                 <Header />

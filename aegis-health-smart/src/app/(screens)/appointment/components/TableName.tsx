@@ -15,6 +15,7 @@ const TableName = ({ img, isActive, name, type } : {
                 width={40}
                 src={img}
                 alt={`${name} image`}
+                className="min-w-10"
             />
             {isActive && <VerifiedTickIcon className="absolute right-0 -bottom-[2px]"/>}
         </div>

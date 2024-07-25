@@ -20,7 +20,12 @@ const VideoCallButton = ( { children, className, ...props } : VideoCallButtonTyp
 const VideoCallScreen = () => {
 
   return (
-    <div style={{backgroundImage: 'url("/videocall1.jpg")'}} className="w-full relative h-[413px] rounded-[16px] mb-10">
+    <div className="w-full relative h-[413px] rounded-[16px] mb-10">
+        <Image 
+            src={'/videocall1.jpg'}
+            fill
+            alt="recipient image"
+        />
         <Image 
             src={'/videocall2.jpg'}
             alt="my image"
