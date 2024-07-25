@@ -54,7 +54,7 @@ const Buttons = () => {
     }
   return (
     <>
-        <div className="bg-[#FCFCFD] border-b border-b-[#E4E7EC] py-[10px] min-[616px]:px-5 rounded-[4px] mb-[30px]">
+        <div className="bg-[#FCFCFD] flex items-center overflow-x-auto whitespace-nowrap border-b border-b-[#E4E7EC] py-[10px] rounded-[4px] mb-[30px]">
             {
                 data.map((link, no) => <Button active={active === no} key={no} text={link.text} action={()=>link.action(no)} />)
             }
@@ -63,7 +63,8 @@ const Buttons = () => {
             <h3 className="text-lg text-[#101928] font-semibold leading-[26.1px]">{data[active].text}</h3>
         </div>
         <div className="flex items-center justify-between">
-            <h4 className="text-[15px] text-[#141414] font-normal leading-[20px]">All sessions were held via zoom</h4>
+            <h4 className="text-[15px] hidden min-[560px]:block text-[#141414] font-normal leading-[20px]">All sessions were held via zoom</h4>
+            <div className="block min-[560px]:hidden"/>
             <div className="flex items-center justify-between">
                 <ButtonWithIcon onClick={handleSearch}>
                     <SearchIcon fill /> <span className="ml-1">Search</span>

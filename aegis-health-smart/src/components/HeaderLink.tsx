@@ -3,7 +3,6 @@ import Link from "next/link"
 import { BellIcon, PlusIcon, WhyIcon } from "./Svgs"
 import { useEffect, useState } from "react"
 import { usePathname } from "next/navigation";
-import { Button } from "./ui/button";
 import MobileNavBar from "./MobileNavBar";
 
 const HeaderLink = () => {
