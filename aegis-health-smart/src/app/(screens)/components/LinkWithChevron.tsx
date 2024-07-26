@@ -1,12 +1,23 @@
-import { ChevronRightIcon } from "@/components/Svgs"
-import Link from "next/link"
+import Link from "next/link";
 
-const LinkWithChevron = ({ href } : {
-    href: string
+const LinkWithChevron = ({
+    href,
+    children,
+    Icon,
+}: {
+    href: string;
+    children?: string;
+    Icon?: React.FC<any>;
 }) => {
-  return (
-    <Link className="text-base flex font-semibold text-[#667185] leading-[23.2px]" href={href}>See all <ChevronRightIcon /></Link>
-  )
-}
+    return (
+        <Link
+            className="text-sm flex font-semibold text-[#667185] leading-[23.2px]"
+            href={href}
+        >
+            <span>{children}</span>
+            {Icon && <Icon />}
+        </Link>
+    );
+};
 
-export default LinkWithChevron
+export default LinkWithChevron;
