@@ -1,7 +1,7 @@
 "use client";
 
+import { ChevronLeftIcon, ChevronRightIcon } from "@/components/Svgs";
 import React, { MutableRefObject } from "react";
-import { GrNext, GrPrevious } from "react-icons/gr";
 
 interface ScrollButtonsProps {
     galleryRef: MutableRefObject<HTMLElement | null>;
@@ -89,7 +89,8 @@ const ScrollButtons: React.FC<ScrollButtonsProps> = ({ galleryRef }) => {
                         onClick={backScroll}
                         disabled={atStart}
                     >
-                        <GrPrevious/>
+                        {/* <GrPrevious/> */}
+                        <ChevronLeftIcon isGrey />
                     </Button>
                     <Button
                         className={`border p-2 rounded-lg ${
@@ -98,7 +99,8 @@ const ScrollButtons: React.FC<ScrollButtonsProps> = ({ galleryRef }) => {
                         onClick={forwardScroll}
                         disabled={atEnd}
                     >
-                        <GrNext/>
+                        {/* <GrNext/> */}
+                        <ChevronRightIcon />
                     </Button>
                 </div>
             </div>
