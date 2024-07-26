@@ -3,6 +3,7 @@
 import FindSpecialistCard from "./FindSpecialistCard";
 import ScrollButtons from "./ScrollButtons";
 import LinkWithChevron from "./LinkWithChevron";
+import { ChevronRightIcon } from "@/components/Svgs";
 import { useRef } from "react";
 interface FindSpecialistCardType {
     img: string;
@@ -45,7 +46,7 @@ const FindSpecialist = () => {
                 <h3 className="text-lg font-semibold leading-5 text-[#141414]">
                     Find Specialist
                 </h3>
-                <LinkWithChevron href="" />
+                <LinkWithChevron href="" Icon={ChevronRightIcon}>See all</LinkWithChevron>
             </div>
             <div id="gallery" ref={galleryRef} className={`flex w-full overflow-x-scroll scroll-smooth`}>
                 {data.map(({ name, active, img, specialization }, id) => (

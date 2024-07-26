@@ -1,98 +1,82 @@
-import { Link } from "lucide-react";
+"use client";
+
 import React from "react";
-import FindSpecialistCard from "../../components/FindSpecialistCard";
+import ActivityCard from "../../components/ActivityCard";
 import ScrollButtons from "../../components/ScrollButtons";
-interface FindSpecialistCardType {
+interface TodayPickProps {
     img: string;
-    name: string;
-    specialization: string;
-    active: boolean;
+    activityName: string;
+    completedSessions: number;
+    totalSessions: number;
 }
 
 function TodayPick() {
     const galleryRef = React.useRef(null);
-    const data: FindSpecialistCardType[] = [
+    const data: TodayPickProps[] = [
         {
-            img: "/img1.jpg",
-            name: "Dr. Uwadinachi Ofoegbunam",
-            specialization: "Neonatal Consultant",
-            active: true,
+            img: "/activity1.png",
+            completedSessions: 2,
+            totalSessions: 18,
+            activityName: "Energy Morning",
         },
         {
-            img: "/img2.jpg",
-            name: "Dr. Uwadinachi Ofoegbunam",
-            specialization: "Neonatal Consultant",
-            active: true,
+            img: "/activity2.png",
+            completedSessions: 2,
+            totalSessions: 18,
+            activityName: "Energy Morning",
         },
         {
-            img: "/img1.jpg",
-            name: "Dr. Uwadinachi Ofoegbunam",
-            specialization: "Neonatal Consultant",
-            active: false,
+            img: "/activity3.png",
+            completedSessions: 2,
+            totalSessions: 18,
+            activityName: "Energy Morning",
         },
         {
-            img: "/img1.jpg",
-            name: "Dr. Uwadinachi Ofoegbunam",
-            specialization: "Neonatal Consultant",
-            active: false,
+            img: "/activity4.png",
+            completedSessions: 2,
+            totalSessions: 18,
+            activityName: "Energy Morning",
         },
     ];
     return (
-        <div>
+        <div className="text-[#141414] pl-5">
             <div className="flex items-center justify-between mt-10">
-                <h2 className="font-semibold">Find Specialist</h2>
-                {/* <Link to="/home/specialists" className="cursor-pointer">
-                    <div className="flex items-center gap-2 text-[#667185] font-semibold">
-                        <span>See all</span>
-                        <GrNext />
-                    </div>
-                </Link> */}
+                <h2 className="font-semibold text-lg leading-5">
+                    Today&apos;s Picks
+                </h2>
             </div>
-            <div className="relative mt-6 ">
+            <div className="relative mt-5 ">
                 <div
                     id="gallery"
                     ref={galleryRef}
                     className=" flex items-center gap-5 overflow-x-scroll scroll-smooth"
                 >
-                    {data.map(({ name, active, img, specialization }, id) => {
-                        return (
-                            <FindSpecialistCard
-                                key={id}
-                                name={name}
-                                active={active}
-                                img={img}
-                                specialization={specialization}
-                                className={`${
-                                    id === data.length - 1 ? "" : "mr-5"
-                                }`}
-                            />
-                        );
-                    })}
+                    {data.map(
+                        (
+                            {
+                                activityName,
+                                completedSessions,
+                                totalSessions,
+                                img,
+                            },
+                            id
+                        ) => {
+                            return (
+                                <ActivityCard
+                                    key={id}
+                                    activityName={activityName}
+                                    completedSessions={completedSessions}
+                                    totalSessions={totalSessions}
+                                    img={img}
+                                />
+                            );
+                        }
+                    )}
                 </div>
             </div>
-            <ScrollButtons galleryRef={galleryRef}/>
-            {/* <div className="flex justify-end mt-5">
-                <div className="flex items-center gap-4">
-                    <button
-                        className={`border p-2 rounded-lg ${
-                            atStart ? "opacity-40" : ""
-                        }`}
-                        onClick={backScroll}
-                        disabled={atStart}
-                    >
-                        <GrPrevious />
-                    </button>
-                    <button
-                        className={`border p-2 rounded-lg ${
-                            atEnd ? "opacity-40" : ""
-                        }`}
-                        onClick={forwardScroll}
-                        disabled={atEnd}
-                    >
-                        <GrNext />
-                    </button>
-                </div>
-            </div> */}
+            <div className="mr-5 py-7">
+                <ScrollButtons galleryRef={galleryRef} />
+            </div>
         </div>
     );
 }

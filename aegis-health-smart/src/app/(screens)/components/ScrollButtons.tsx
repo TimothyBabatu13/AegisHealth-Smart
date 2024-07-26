@@ -7,16 +7,16 @@ interface ScrollButtonsProps {
     galleryRef: MutableRefObject<HTMLElement | null>;
 }
 
-const Button = ({
+export const Button = ({
     children,
     className,
     onClick,
     disabled,
 }: {
-    children: React.ReactElement;
+    children: React.ReactElement | string | number;
     className: string;
-    onClick: () => void;
-    disabled: boolean;
+    onClick?: () => void;
+    disabled?: boolean;
 }) => {
     return (
         <button
@@ -83,22 +83,22 @@ const ScrollButtons: React.FC<ScrollButtonsProps> = ({ galleryRef }) => {
             <div className="flex justify-end mt-5">
                 <div className="flex items-center gap-4">
                     <Button
-                        className={`border p-2 rounded-lg ${
+                        className={`border p-2 rounded-lg w-10 h-10 flex items-center justify-center ${
                             atStart ? "opacity-50" : ""
                         }`}
                         onClick={backScroll}
                         disabled={atStart}
                     >
-                        <GrPrevious/>
+                        <GrPrevious color="#141414"/>
                     </Button>
                     <Button
-                        className={`border p-2 rounded-lg ${
+                        className={`border p-2 rounded-lg w-10 h-10 flex items-center justify-center ${
                             atEnd ? "opacity-50" : ""
                         }`}
                         onClick={forwardScroll}
                         disabled={atEnd}
                     >
-                        <GrNext/>
+                        <GrNext color="#141414"/>
                     </Button>
                 </div>
             </div>

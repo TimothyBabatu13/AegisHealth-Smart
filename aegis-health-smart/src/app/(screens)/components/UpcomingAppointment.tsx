@@ -1,4 +1,5 @@
 import LinkWithChevron from "./LinkWithChevron"
+import { ChevronRightIcon } from "@/components/Svgs";
 import UpcomingSessionCard from "./UpcomingSessionCard"
 import ZoomCard from "./ZoomCard"
 
@@ -7,7 +8,7 @@ const UpcomingAppointment = () => {
     <div>
        <div className="flex items-center justify-between">
             <h3 className="text-lg text-[#101928] font-semibold leading-[26.5px]">Upcoming Appointments</h3>
-            <LinkWithChevron href="" />
+            <LinkWithChevron href="" Icon={ChevronRightIcon}></LinkWithChevron>
        </div>
        <ZoomCard 
             day="Friday, 4 November"
