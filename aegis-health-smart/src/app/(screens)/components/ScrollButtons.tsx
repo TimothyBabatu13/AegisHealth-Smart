@@ -1,22 +1,23 @@
 "use client";
 
-import { ChevronLeftIcon, ChevronRightIcon } from "@/components/Svgs";
+
+import { GrNext, GrPrevious } from "react-icons/gr";
 import React, { MutableRefObject } from "react";
 
 interface ScrollButtonsProps {
     galleryRef: MutableRefObject<HTMLElement | null>;
 }
 
-const Button = ({
+export const Button = ({
     children,
     className,
     onClick,
     disabled,
 }: {
-    children: React.ReactElement;
+    children: React.ReactElement | string | number;
     className: string;
-    onClick: () => void;
-    disabled: boolean;
+    onClick?: () => void;
+    disabled?: boolean;
 }) => {
     return (
         <button
@@ -83,24 +84,22 @@ const ScrollButtons: React.FC<ScrollButtonsProps> = ({ galleryRef }) => {
             <div className="flex justify-end mt-5">
                 <div className="flex items-center gap-4">
                     <Button
-                        className={`border p-2 rounded-lg ${
+                        className={`border p-2 rounded-lg w-10 h-10 flex items-center justify-center ${
                             atStart ? "opacity-50" : ""
                         }`}
                         onClick={backScroll}
                         disabled={atStart}
                     >
-                        {/* <GrPrevious/> */}
-                        <ChevronLeftIcon isGrey />
+                        <GrPrevious color="#141414"/>
                     </Button>
                     <Button
-                        className={`border p-2 rounded-lg ${
+                        className={`border p-2 rounded-lg w-10 h-10 flex items-center justify-center ${
                             atEnd ? "opacity-50" : ""
                         }`}
                         onClick={forwardScroll}
                         disabled={atEnd}
                     >
-                        {/* <GrNext/> */}
-                        <ChevronRightIcon />
+                        <GrNext color="#141414"/>
                     </Button>
                 </div>
             </div>
