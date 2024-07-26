@@ -1,7 +1,8 @@
 "use client";
 
-import React, { MutableRefObject } from "react";
+
 import { GrNext, GrPrevious } from "react-icons/gr";
+import React, { MutableRefObject } from "react";
 
 interface ScrollButtonsProps {
     galleryRef: MutableRefObject<HTMLElement | null>;

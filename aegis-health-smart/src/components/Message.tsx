@@ -42,8 +42,8 @@ const Message = ({ id } : {
     // console.log(id)
     const myID = 'rrr'
   return (
-    <div className="max-h-[454px] relative">
-        <div className="mt-[52px] ">
+    <div className=" overflow-y-auto relative">
+        <div className="max-h-[454px] mt-[52px] ">
             {messages.map((message, key) =>(
                 <div key={key} className={`flex justify-between mb-5 ${id === message.senderID ? '' : 'flex-row-reverse'}`}>
                     <TextMessage className={cn(`text-sm text-[#141414CC] font-normal leading-[22px] py-2.5 pr-2 px-[15px] ${id === message.senderID ? 'w-[259px] bg-[#F7F7F7] rounded-t-[12px] rounded-br-[12px]' : 'w-[315px] bg-[#FEEDE7] rounded-t-[12px] rounded-bl-[12px]'} ${key === messages.length - 1 && 'mb-5'} `)} content={message.content} />
