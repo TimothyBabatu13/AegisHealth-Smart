@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import FindSpecialistCard from "../../components/FindSpecialistCard";
 import ScrollButtons from "../../components/ScrollButtons";

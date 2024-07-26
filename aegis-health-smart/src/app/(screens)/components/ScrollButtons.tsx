@@ -90,7 +90,7 @@ const ScrollButtons: React.FC<ScrollButtonsProps> = ({ galleryRef }) => {
                         disabled={atStart}
                     >
                         {/* <GrPrevious/> */}
-                        <ChevronLeftIcon isGrey />
+                        <ChevronLeftIcon />
                     </Button>
                     <Button
                         className={`border p-2 rounded-lg ${
