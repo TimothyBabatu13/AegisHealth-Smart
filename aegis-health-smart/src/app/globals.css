@@ -139,3 +139,7 @@
     transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
   }
 }
+
+#gallery::-webkit-scrollbar {
+  display: none;
+}
