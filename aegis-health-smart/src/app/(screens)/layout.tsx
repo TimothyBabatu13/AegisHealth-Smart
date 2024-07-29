@@ -11,7 +11,7 @@ const layout = ({
     return (
         <ProtectedRoute>
             <ScrollObserver>
-                <main className="min-[1220px]:flex gap-5 bg-[#FCFCFD]">
+                <main className="min-[1220px]:flex bg-[#FCFCFD]">
                     <NavBar />
                     <section className="flex-1">
                         <Header />
