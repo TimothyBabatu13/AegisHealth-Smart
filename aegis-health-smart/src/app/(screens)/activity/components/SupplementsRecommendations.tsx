@@ -43,7 +43,7 @@ function SupplementsRecommendations() {
             <h2 className="text-[18px] font-semibold leading-5 mb-5">
                 Recommended Supplements
             </h2>
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-2 gap-2 min-[1440px]:gap-5">
                 {vitals.map(
                     ({ supplementName, numberOfCapsules, composition, supplementImage }, id) => {
                         return (
