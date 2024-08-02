@@ -57,7 +57,7 @@ const MobileNavBar = () => {
         setActiveLink(pathName);
     }, [pathName])
   return (
-    <nav className="min-[1220px]:hidden flex items-center">
+    <nav className="min-[1340px]:hidden flex items-center">
         <MobileSearch />
         <Sheet>
             <SheetTrigger>

@@ -19,7 +19,7 @@ function VitalsCard({Icon, vital, latestReading, units, cardColor}: VitalsCardPr
                 <Icon size={20} />
             </div>
             <p className="mb-2 text-sm leading-5">{vital}</p>
-            <p className="text-base 2xl:text-lg leading-[26.1px]">
+            <p className="text-lg leading-[26.1px]">
                 <span className="font-semibold">{latestReading} </span>
                 <span className="text-xs leading-[17.4px]">{units}</span>
             </p>

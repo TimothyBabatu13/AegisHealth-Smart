@@ -1,12 +1,17 @@
 import { app } from "@/config/firebaseConfig";
 import { userDetailsType } from "@/types/types";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, User, onAuthStateChanged } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, User, onAuthStateChanged, setPersistence, browserLocalPersistence } from "firebase/auth";
 
 interface CreateNewAccountType {
   data: User|any,
   code: number
 }
 
+type ValidateAuthType = {
+  isActive: boolean,
+  uid: string | null,
+  user?: User
+}
 export const CreateNewAccount = async (data : userDetailsType) : Promise<CreateNewAccountType> =>{
     const auth = getAuth(app);
     const { email, password } = data;
@@ -24,6 +29,13 @@ export const CreateNewAccount = async (data : userDetailsType) : Promise<CreateN
 
 export const LoginToExistingAccount = async ( data: userDetailsType ) : Promise<CreateNewAccountType> => {
   const auth = getAuth(app);
+  setPersistence(auth, browserLocalPersistence)
+  .then(res => {
+    return;
+  })
+  .catch(err => {
+    return;
+  })
   const { email, password } = data;
   return signInWithEmailAndPassword(auth, email, password)
   .then((usercredentials) => {
@@ -37,24 +49,21 @@ export const LoginToExistingAccount = async ( data: userDetailsType ) : Promise<
   })
 }
 
-export const ValidateAuth =  () => {
+export const ValidateAuth =  ()   => {
   const auth = getAuth(app);
 
-  return new Promise((resolve, reject) => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/auth.user
       const uid = user.uid;
-      return resolve({c: true, id: uid});
+      console.log(uid)
+      return ({isActive: true, uid, user: user});
       // ...
     } else {
       // User is signed out
       // ...
-      console.log('user is signed out')
-      reject({c:false, id:null})
-      return false;
+      console.log('not active')
+      return ({isActive: false, uid: null,})
     }
-  })
-});
-}
+})}

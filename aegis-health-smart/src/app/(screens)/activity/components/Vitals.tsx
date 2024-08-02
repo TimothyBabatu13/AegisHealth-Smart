@@ -51,7 +51,7 @@ function Vitals() {
           <h2 className="text-[18px] leading-5 font-semibold">Your Vitals</h2>
           <LinkWithChevron href="" Icon={ChevronDown}>Today</LinkWithChevron>
         </div>
-        <div className="grid grid-cols-2 gap-2 min-[1440px]:gap-5">
+        <div className="grid grid-cols-2 gap-5">
             {vitals.map(
                 ({ Icon, vital, latestReading, units, cardColor }, id) => {
                     return (

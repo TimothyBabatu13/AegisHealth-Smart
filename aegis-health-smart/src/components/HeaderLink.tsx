@@ -22,9 +22,9 @@ const HeaderLink = () => {
 
   return (
     <div className="flex items-center">
-        <Link className={`hidden min-[1220px]:block mr-5 ${checkIfToShow('/')}`} href={''}><WhyIcon /></Link>
-        <Link className={`hidden min-[1220px]:block mr-5 ${checkIfToShow('/', '/appointment')}`} href={''}><BellIcon /></Link>
-        <Link className={`${bookSession ? 'flex' : 'hidden'} hidden min-[1220px]:flex  items-center text-[#FFFFFF] text-sm font-semibold leading-[35.62px] bg-[#291ED7] py-2 px-4 rounded-[8px]`} href={'/'}><PlusIcon className="mr-[7px]"/> Book Sessions</Link>
+        <Link className={`hidden min-[1340px]:block mr-5 ${checkIfToShow('/')}`} href={''}><WhyIcon /></Link>
+        <Link className={`hidden min-[1340px]:block mr-5 ${checkIfToShow('/', '/appointment')}`} href={''}><BellIcon /></Link>
+        <Link className={`${bookSession ? 'flex' : 'hidden'} hidden min-[1340px]:flex  items-center text-[#FFFFFF] text-sm font-semibold leading-[35.62px] bg-[#291ED7] py-2 px-4 rounded-[8px]`} href={'/'}><PlusIcon className="mr-[7px]"/> Book Sessions</Link>
         <MobileNavBar />
     </div>
   )

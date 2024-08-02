@@ -7,7 +7,8 @@ interface FindSpecialistCardType {
     name: string,
     specialization: string,
     active: boolean,
-    className: string
+    className: string,
+    id: string
 }
 
 const Badge = ({ text, className } : {
@@ -21,7 +22,7 @@ const Badge = ({ text, className } : {
     )
 }
 
-const FindSpecialistCard = ({ img, name, specialization, active, className } : FindSpecialistCardType) => {
+const FindSpecialistCard = ({ img, name, specialization, active, className, id } : FindSpecialistCardType) => {
   return (
     <div className={`h-[325px] min-w-[264px] w-[264px] rounded-[20px] border-[0.5px] border-[#E0E3EB] p-[15px] ${className}`}>
         <Image 
@@ -38,7 +39,7 @@ const FindSpecialistCard = ({ img, name, specialization, active, className } : F
         <div className="flex">
             <Link className="text-sm text-[#344054] font-semibold mr-[10px] leading-[21px] py-2 px-4 border border-[#E0E3EB] rounded-[10px]" href={''}>View Schedule</Link>
             <RedirectToMessage 
-                href=""
+                href={`/chat/${id}`}
             />
         </div>
     </div>

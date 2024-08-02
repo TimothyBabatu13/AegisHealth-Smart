@@ -1,6 +1,6 @@
 import Message from "@/components/Message"
 
-interface paramsType {
+export interface paramsType {
     params: {
         id: string
     }

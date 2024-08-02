@@ -3,13 +3,18 @@
 import EmailInput from "@/components/EmailInput";
 import PasswordInput from "@/components/PasswordInput";
 import { useToast } from "@/components/ui/use-toast";
+import { useAuthContextProvider } from "@/context/AuthContext";
 import { userDetailsType } from "@/types/types";
+import { LoginToExistingAccount } from "@/utils/firebase";
 import formatFirebaseError from "@/utils/formatFirebaseError";
 import Link from "next/link"
+import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 
 const Page = () => {
-    
+  const { id, setId } = useAuthContextProvider();
+    console.log(id)
+    const route = useRouter();
     const [userDetails, setUserDetails] = useState<userDetailsType>({
         email: '',
         password: '',
@@ -29,32 +34,24 @@ const Page = () => {
         setIsLoading(true)
         
         try {
-          const res = await fetch("api/signin", {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              email: userDetails.email,
-              password: userDetails.password
-            }),
-          })
-          const { result, status } = await res.json() 
- 
-          console.log(result, status)
+          LoginToExistingAccount(userDetails)
+          .then(res => {
+            const { data, code } = res
+            toast({
+                description: formatFirebaseError(data?.uid ? 'Login Succesful' : "An error occured"),
+                variant: code === 500 ? 'destructive':'default',
+              })
+            setId(res.data?.uid)
+            if(res.data?.uid){
+              route.push('/')
+            }
 
-          toast({
-            description: formatFirebaseError(result),
-            variant: status === 500 ? 'destructive':'default',
           })
-
+          .catch(err => console.log(err))
           setIsLoading(false)
-
         } catch (error) {
           console.log(error)
         }
-          
-        
     }
     return (
         <>

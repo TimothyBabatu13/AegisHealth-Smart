@@ -1,3 +1,4 @@
+import { User } from "firebase/auth";
 import { ChangeEventHandler, Dispatch, SetStateAction } from "react";
 
 export interface userDetailsType {
@@ -13,7 +14,8 @@ export interface FormInputType {
 
 export interface AuthContextType {
     id : string | null,
-    setId: Dispatch<SetStateAction<string|null>>
+    setId: Dispatch<SetStateAction<string|null>>,
+    user?: User | null
 }
 
 export interface AppointmentTableType {

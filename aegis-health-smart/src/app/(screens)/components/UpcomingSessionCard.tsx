@@ -7,9 +7,10 @@ interface UpcomingSessionCardType {
     isActive: boolean,
     name: string,
     type: string,
+    id: string
 }
 
-const UpcomingSessionCard = ({ img, isActive, name, type } : UpcomingSessionCardType) => {
+const UpcomingSessionCard = ({ img, isActive, name, type, id } : UpcomingSessionCardType) => {
   return (
     <div className="flex items-center border border-[#E0E3EB] rounded-[8px] py-[10px] px-5 mb-[18px]">
         <div className="mr-3 h-fit w-fit relative">
@@ -26,7 +27,7 @@ const UpcomingSessionCard = ({ img, isActive, name, type } : UpcomingSessionCard
             <h4 className="text-sm font-normal text-[#475367] leading-[20.3px]">{type}</h4>
         </div>
         <RedirectToMessage 
-            href=""
+            href={`/chat/${id}`}
         />
     </div>
   )

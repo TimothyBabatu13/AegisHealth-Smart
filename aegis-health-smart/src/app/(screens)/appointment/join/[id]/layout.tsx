@@ -3,6 +3,7 @@ import DoctorInformation from "./components/DoctorInformation";
 import VideoCallScreen from "./components/VideoCallScreen";
 import MessageNavBar from "./components/MessageNavBar";
 import SmallPageWrapper from "@/components/SmallPageWrapper";
+import UpcomingAppointment from "@/app/(screens)/components/UpcomingAppointment";
 //Readonly<{
 interface LayoutType {
     children:  React.ReactNode,
@@ -24,7 +25,7 @@ const layout = ({
             {children}
         </PageWrapper>
         <SmallPageWrapper>
-            Hello How&apos;re you?
+          <UpcomingAppointment />
         </SmallPageWrapper>
         
     </div>

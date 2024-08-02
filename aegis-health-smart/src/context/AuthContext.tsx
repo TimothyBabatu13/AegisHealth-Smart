@@ -1,13 +1,14 @@
+'use client';
 // import { useContextHook } from '@/utils/useContext';
 import Loader from '@/components/Loader';
 import { app } from '@/config/firebaseConfig';
 import { AuthContextType } from '@/types/types';
 import { useContextHook } from '@/utils/useContext';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, User } from 'firebase/auth';
 import { createContext, useEffect, useState } from 'react'
 
 
-const Context = createContext<AuthContextType | null>(null)
+const Context = createContext<AuthContextType | null >(null)
 
 const AuthContext = ({
     children,
@@ -15,25 +16,29 @@ const AuthContext = ({
     children: React.ReactNode;
   }>) => {
 
+    const auth = getAuth(app);
     const [id, setId] = useState<string|null>('');
+    const [user, setUser] = useState<User | null>(null);
 
     useEffect(()=> {
-      const auth = getAuth(app);
-      onAuthStateChanged(auth, (user) => {
+      const unsubscribe = onAuthStateChanged(auth, (user) => {
           if (user) {
-          const uid = user.uid;
-          console.log(uid);
-          setId(uid);
-      } else {
-          setId(null)
-          // console.log('...not login')
-      }
-      });
-    }, [])
+            setUser(user)
+            const uid = user.uid;
+            // console.log(user)
+            // console.log(uid);
+            setId(uid);
+          } else {
+            setId(null)
+            console.log("User does not exists")
+          }
+        });
+      return ()=> unsubscribe();
+    }, [auth])
 
     if(id === '') return <Loader />
   return (
-    <Context.Provider value={{id, setId }}>
+    <Context.Provider value={{id, setId, user}}>
         {children}
     </Context.Provider>
   )

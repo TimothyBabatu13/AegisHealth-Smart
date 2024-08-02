@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: 'AIzaSyCPYt--x_mFi0P-EWP5-cQBaVRZdVLve-4',
   authDomain: "aegis-health-smart.firebaseapp.com",
   projectId: "aegis-health-smart",

@@ -26,24 +26,28 @@ const UpcomingAppointment = () => {
                 img="/upcomingappointment.jpg"
                 name="Dr. Alison Ogaga"
                 type="General Practioner "
+                id="0"
             />
             <UpcomingSessionCard 
                 isActive
                 img="/upcomingappointment.jpg"
                 name="Dr. Alison Ogaga"
                 type="General Practioner "
+                id="1"
             />
             <UpcomingSessionCard 
                 isActive
                 img="/upcomingappointment.jpg"
                 name="Dr. Alison Ogaga"
                 type="General Practioner "
+                id="2"
             />
             <UpcomingSessionCard 
                 isActive
                 img="/upcomingappointment.jpg"
                 name="Dr. Alison Ogaga"
                 type="General Practioner "
+                id="3"
             />
         </div>
     </div>
