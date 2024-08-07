@@ -13,13 +13,13 @@ function VitalsCard({Icon, vital, latestReading, units, cardColor}: VitalsCardPr
     return (
         <div
             style={{ backgroundColor: `${cardColor}` }}
-            className="py-[11px] px-[15px] rounded-lg "
+            className="py-[11px] px-[15px] rounded-lg"
         >
             <div className="bg-white rounded-lg p-2 mb-[22px] w-fit">
-                <Icon size={20} />
+                <Icon size={20 } />
             </div>
-            <p className="mb-2 text-sm leading-5">{vital}</p>
-            <p className="text-lg leading-[26.1px]">
+            <p className="mb-2 text-nowrap text-sm leading-5">{vital}</p>
+            <p className="text-lg leading-[26.1px] flex items-end gap-1 flex-nowrap">
                 <span className="font-semibold">{latestReading} </span>
                 <span className="text-xs leading-[17.4px]">{units}</span>
             </p>

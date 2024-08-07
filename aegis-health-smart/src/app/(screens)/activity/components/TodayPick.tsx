@@ -1,8 +1,6 @@
-"use client";
-
 import React from "react";
 import ActivityCard from "../../components/ActivityCard";
-import ScrollButtons from "../../components/ScrollButtons";
+import ScrollComponent from "../../components/ScrollComponent";
 interface TodayPickProps {
     img: string;
     activityName: string;
@@ -11,7 +9,6 @@ interface TodayPickProps {
 }
 
 function TodayPick() {
-    const galleryRef = React.useRef(null);
     const data: TodayPickProps[] = [
         {
             img: "/activity1.png",
@@ -39,44 +36,30 @@ function TodayPick() {
         },
     ];
     return (
-        <div className="text-[#141414] pl-5">
+        <div className="text-[#141414]">
             <div className="flex items-center justify-between mt-10">
                 <h2 className="font-semibold text-lg leading-5">
                     Today&apos;s Picks
                 </h2>
             </div>
-            <div className="relative mt-5 ">
-                <div
-                    id="gallery"
-                    ref={galleryRef}
-                    className=" flex items-center gap-5 overflow-x-scroll scroll-smooth"
-                >
-                    {data.map(
-                        (
-                            {
-                                activityName,
-                                completedSessions,
-                                totalSessions,
-                                img,
-                            },
-                            id
-                        ) => {
-                            return (
-                                <ActivityCard
-                                    key={id}
-                                    activityName={activityName}
-                                    completedSessions={completedSessions}
-                                    totalSessions={totalSessions}
-                                    img={img}
-                                />
-                            );
-                        }
-                    )}
-                </div>
-            </div>
-            <div className="mr-5 py-7">
-                <ScrollButtons galleryRef={galleryRef} />
-            </div>
+            <ScrollComponent>
+                {data.map(
+                    (
+                        { activityName, completedSessions, totalSessions, img },
+                        id
+                    ) => {
+                        return (
+                            <ActivityCard
+                                key={id}
+                                activityName={activityName}
+                                completedSessions={completedSessions}
+                                totalSessions={totalSessions}
+                                img={img}
+                            />
+                        );
+                    }
+                )}
+            </ScrollComponent>
         </div>
     );
 }
