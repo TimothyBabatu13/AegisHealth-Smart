@@ -4,6 +4,7 @@ import { BsThermometerHalf } from "react-icons/bs";
 import VitalsCard from "./VitalsCard";
 import { ChevronDown } from "lucide-react";
 import LinkWithChevron from "../../components/LinkWithChevron";
+import ScrollComponent from "../../components/ScrollComponent";
 
 interface Vitals {
     Icon: IconType;
@@ -46,12 +47,12 @@ function Vitals() {
     ];
 
     return (
-      <div className="mb-[72px] mb-">
+      <div className="mb-[72px]">
         <div className="flex items-center justify-between mb-5">
           <h2 className="text-[18px] leading-5 font-semibold">Your Vitals</h2>
           <LinkWithChevron href="" Icon={ChevronDown}>Today</LinkWithChevron>
         </div>
-        <div className="grid grid-cols-2 gap-5">
+        <ScrollComponent className="min-[1220px]:grid grid-cols-2">
             {vitals.map(
                 ({ Icon, vital, latestReading, units, cardColor }, id) => {
                     return (
@@ -66,7 +67,7 @@ function Vitals() {
                     );
                 }
             )}
-        </div>
+        </ScrollComponent>
       </div>
     );
 }

@@ -37,7 +37,7 @@ const ActivityCars = ({
                     width={234}
                     className="rounded-[10px] mb-[13px] w-full aspect-[6/4] object-fill"
                     src={img}
-                    alt={`${name} image`}
+                    alt={`${activityName} image`}
                     priority
                 />
                 <div className="flex items-end justify-between">

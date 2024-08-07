@@ -26,7 +26,6 @@ function PopularSymptoms() {
                     <LinkWithChevron
                         href=""
                         Icon={ChevronRightIcon}
-                        className="text-base"
                     >
                         See all
                     </LinkWithChevron>
@@ -55,7 +54,7 @@ function PopularSymptoms() {
                     rows={10}
                     cols={5}
                     onChange={(e) => setDescription(e.target.value)}
-                    className="w-full border-[0.5px] border-[#E4E7EC] p-5 rounded-lg text-sm placeholder:text-[#14141499] focus:outline-[#291ED7]"
+                    className="w-full resize-none border-[0.5px] border-[#E4E7EC] p-5 rounded-lg text-sm placeholder:text-[#14141499] focus:outline-[#291ED7]"
                     placeholder="Type here to describe how you feel"
                 ></textarea>
             </div>

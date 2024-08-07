@@ -2,10 +2,10 @@ import { app } from "@/config/firebaseConfig";
 import { ValidateAuth } from "@/utils/firebase";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-export async function GET() {
+export async function GET(): Promise<Response> {
     
     const auth = getAuth(app);
-    return new Promise((resolve) => {
+    return new Promise<Response>((resolve) => {
         onAuthStateChanged(auth, (user) => {
           if (user) {
             const uid = user.uid;
