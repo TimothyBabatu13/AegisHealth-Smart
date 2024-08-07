@@ -13,7 +13,8 @@ function SuggestedPhysicians() {
                     isActive
                     img="/upcomingappointment.jpg"
                     name="Dr. Alison Ogaga"
-                    type="General Practioner "
+                    type="General Practitioner"
+                    id="0"
                 />
             </div>
             <div>
