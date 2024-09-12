@@ -11,7 +11,7 @@ function ScrollObserver({children} : {children: React.ReactNode}) {
         function handleScroll () {
             if (window) {
                 setScrollActive(window.scrollY > 30)
-                console.log(scrollActive, "working")
+                // console.log(scrollActive, "working")
 
             }
         }
