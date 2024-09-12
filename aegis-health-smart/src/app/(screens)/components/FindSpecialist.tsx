@@ -7,6 +7,7 @@ import { ChevronRightIcon } from "@/components/Svgs";
 import { Suspense, useRef } from "react";
 import FindSpecialistData from "./FindSpecialistData";
 import Loader from "@/components/Loader";
+import FindSpeciallistSkeleton from "./FindSpeciallistSkeleton";
 export interface FindSpecialistCardType {
     img: string;
     name: string;
