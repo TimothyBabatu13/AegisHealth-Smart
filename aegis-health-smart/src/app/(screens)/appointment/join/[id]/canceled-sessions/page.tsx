@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 const page = () => {
   return (
@@ -6,13 +5,4 @@ const page = () => {
   )
 }
 
-=======
-
-const page = () => {
-  return (
-    <div>Canceled Sessions</div>
-  )
-}
-
->>>>>>> master
 export default page
