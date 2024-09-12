@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 const page = () => {
   return (
@@ -5,4 +6,13 @@ const page = () => {
   )
 }
 
+=======
+
+const page = () => {
+  return (
+    <section>page</section>
+  )
+}
+
+>>>>>>> master
 export default page

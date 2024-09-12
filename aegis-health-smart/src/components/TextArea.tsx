@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Textarea } from "./ui/textarea"
 const TextArea = () => {
   return (
@@ -5,4 +6,13 @@ const TextArea = () => {
   )
 }
 
+=======
+import { Textarea } from "./ui/textarea"
+const TextArea = () => {
+  return (
+    <div>TextArea</div>
+  )
+}
+
+>>>>>>> master
 export default TextArea

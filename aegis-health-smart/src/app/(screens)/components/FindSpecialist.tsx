@@ -1,12 +1,12 @@
 'use client'
 
-import FindSpecialistCard from "./FindSpecialistCard";
 import ScrollButtons from "./ScrollButtons";
 import LinkWithChevron from "./LinkWithChevron";
 import { ChevronRightIcon } from "@/components/Svgs";
 import { Suspense, useRef } from "react";
 import FindSpecialistData from "./FindSpecialistData";
 import Loader from "@/components/Loader";
+
 export interface FindSpecialistCardType {
     img: string;
     name: string;

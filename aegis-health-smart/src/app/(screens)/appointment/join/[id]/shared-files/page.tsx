@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 const page = () => {
   return (
@@ -5,4 +6,13 @@ const page = () => {
   )
 }
 
+=======
+
+const page = () => {
+  return (
+    <div>Share Files</div>
+  )
+}
+
+>>>>>>> master
 export default page

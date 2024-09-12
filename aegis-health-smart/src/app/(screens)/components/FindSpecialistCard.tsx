@@ -45,5 +45,4 @@ const FindSpecialistCard = ({ img, name, specialization, active, className, id }
     </div>
   )
 }
-
-export default FindSpecialistCard
+export default FindSpecialistCard;
