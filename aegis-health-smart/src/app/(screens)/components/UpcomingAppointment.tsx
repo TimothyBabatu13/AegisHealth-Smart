@@ -1,7 +1,7 @@
 import LinkWithChevron from "./LinkWithChevron"
 import { ChevronRightIcon } from "@/components/Svgs";
 import UpcomingSessionCard from "./UpcomingSessionCard"
-import ZoomCard from "./ZoomCard"
+import  UpcomingsessionData, { ZoomCardAppointmentData } from "./ZoomCardData";
 
 const UpcomingAppointment = () => {
   return (
@@ -10,7 +10,8 @@ const UpcomingAppointment = () => {
             <h3 className="text-lg text-[#101928] font-semibold leading-[26.5px]">Upcoming Appointments</h3>
             <LinkWithChevron href="" Icon={ChevronRightIcon}></LinkWithChevron>
        </div>
-       <ZoomCard 
+       {/* <ZoomCardData /> */}
+       {/* <ZoomCard 
             day="Friday, 4 November"
             time="11.30 - 12.00 (30 min)"
             name="Dr. Hardy Octavian"
@@ -18,10 +19,12 @@ const UpcomingAppointment = () => {
             type="General Practioner "
             img="/upcomingappointment.jpg"
             id='aaa'
-        />
+        /> */}
+        <ZoomCardAppointmentData />
         <div className="mt-[39px]">
             <h3 className="text-lg text-[#141414] font-semibold leading-[21.6px] mb-5">Upcoming Sessions</h3>
-            <UpcomingSessionCard 
+            <UpcomingsessionData />
+            {/* <UpcomingSessionCard 
                 isActive
                 img="/upcomingappointment.jpg"
                 name="Dr. Alison Ogaga"
@@ -48,7 +51,7 @@ const UpcomingAppointment = () => {
                 name="Dr. Alison Ogaga"
                 type="General Practioner "
                 id="3"
-            />
+            /> */}
         </div>
     </div>
   )

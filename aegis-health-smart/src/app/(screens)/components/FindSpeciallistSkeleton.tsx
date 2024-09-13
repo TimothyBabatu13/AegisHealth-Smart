@@ -2,7 +2,7 @@ import { Skeleton } from "@/components/ui/skeleton"
 import Link from "next/link"
 import RedirectToMessage from "./RedirectToMessage"
 
-function SkeletonCard() {
+export function SkeletonCard() {
   return (
     <div className="mr-5">
         <Skeleton className="h-[156px] w-[234px] bg-slate-600 rounded-[20px] mb-[13px]" />
