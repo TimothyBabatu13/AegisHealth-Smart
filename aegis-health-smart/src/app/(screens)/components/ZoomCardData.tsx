@@ -128,7 +128,8 @@ export const UpcomingsessionData = () => {
     }
   return (<>
   {ZoomData.map((datum) =>
-    <UpcomingSessionCard 
+    <UpcomingSessionCard
+        key={datum?.id} 
         isActive={datum?.isActive}
         img={datum?.img}
         name={datum?.name}
