@@ -3,6 +3,8 @@
 import { ColumnDef } from "@tanstack/react-table"
 import TableName from "./TableName"
 import TableHospital from "./TableHospital"
+import TableNameLoader from "./TableNameLoader"
+import TableHospitalLoader from "./TableHospitalLoader"
 
 export type Payment = {
   id: string,
@@ -48,6 +50,30 @@ export const columns: ColumnDef<Payment>[] = [
             hospital={row.original.date}
             address={row.original.time}
         />
+    )
+  },
+]
+
+export const secondCol: ColumnDef<Payment>[] = [
+  {
+    accessorKey: "nameComponent",
+    header: "Name",
+    cell: ({row}) => (
+        <TableNameLoader />
+    )
+  },
+  {
+    accessorKey: "hospitalComponent",
+    header: "Hospital Practicing",
+    cell: ({row}) => (
+        <TableHospitalLoader width/>
+    )
+  },
+  {
+    accessorKey: "dateComponent",
+    header: "Date and time",
+    cell: ({row}) => (
+        <TableHospitalLoader width={false}/>
     )
   },
 ]

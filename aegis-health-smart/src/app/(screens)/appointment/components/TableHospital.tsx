@@ -5,7 +5,7 @@ import {
 } from "@/components/ui/hover-card"
 import { cn } from "@/lib/utils"
 
-const Text = ({ width, address, hospital, className } : {
+export const Text = ({ width, address, hospital, className } : {
   width: boolean,
   address: string,
   hospital: string,

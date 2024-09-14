@@ -18,16 +18,24 @@ import {
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
-  data: any
+  data: any,
+  isLoading: boolean,
+  loadingData: any,
+  secondCol: ColumnDef<TData, TValue>[]
 }
 
 export function DataTable<TData, TValue>({
   columns,
-  data,
+  data, 
+  isLoading,
+  loadingData,
+  secondCol
 }: DataTableProps<TData, TValue>) {
+  const jsxtoDisplay = isLoading ? secondCol : columns;
+  const dataToDisplay = isLoading ? loadingData : data;
   const table = useReactTable({
-    data,
-    columns,
+    data: dataToDisplay,
+    columns: jsxtoDisplay,
     getCoreRowModel: getCoreRowModel(),
   })
 
@@ -53,7 +61,7 @@ export function DataTable<TData, TValue>({
           ))}
         </TableHeader>
         <TableBody>
-          {table.getRowModel().rows?.length ? (
+          { table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) =>  (
               <TableRow
                 key={row.id}
