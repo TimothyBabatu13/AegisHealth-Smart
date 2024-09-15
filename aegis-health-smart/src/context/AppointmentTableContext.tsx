@@ -77,7 +77,7 @@ const AppointmentTableContext = ({
             setIsLoading(false);    
             data.push({...doc.data(), id: doc.id});
         });
-        setTableData(data);
+        setTableData(data.filter(item => item.status === 'upcoming'));
         setRealData(data)
     });  
     } catch (error) {

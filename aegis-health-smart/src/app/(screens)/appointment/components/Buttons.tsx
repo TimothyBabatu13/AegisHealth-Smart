@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { FilterIcon, SearchIcon, SortIcon } from "@/components/Svgs";
+import { useAppointmentTableHook } from "@/context/AppointmentTableContext";
 
 const Button = ({ text, action, active } : {
     text: string,
@@ -23,24 +24,29 @@ const ButtonWithIcon = ({ children, onClick } : {
 }
 
 const Buttons = () => {
+    const { realData, setTableData } = useAppointmentTableHook();
+    
     const [active, setActive] = useState(0);
     const data = [
         {
             text:'Upcoming Sessions',
             action: (id : number)=>{
                 changeActiveTab(id)
+                setTableData(realData?.filter((datum: any) => datum.status === 'upcoming'))
             }
         }, 
         {
             text: 'Completed Sessions',
             action: (id : number)=>{
                 changeActiveTab(id)
+                setTableData(realData?.filter((datum: any) => datum.status === 'completed'))
             }
         }, 
         {
             text:'Canceled Sessions',
             action: (id : number)=>{
                 changeActiveTab(id)
+                setTableData(realData?.filter((datum: any) => datum.status === 'canceled'))
             }
         }
     ]

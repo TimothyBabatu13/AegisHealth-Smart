@@ -2,12 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import RedirectToMessage from "./RedirectToMessage";
 import { Button } from "./ScrollButtons";
+import LazyLoadImage from "../activity/components/LazyLoadImage";
 
 interface ActivityCardProps {
     img: string;
     activityName: string;
     completedSessions: number;
     totalSessions: number;
+    id: string
 }
 
 const Badge = ({ text, className }: { text: string; className: string }) => {
@@ -20,11 +22,15 @@ const Badge = ({ text, className }: { text: string; className: string }) => {
     );
 };
 
+const OptimizedImage = () => {
+    
+}
 const ActivityCars = ({
     img,
     activityName,
     completedSessions,
     totalSessions,
+    id
 }: ActivityCardProps) => {
     return (
         <div>
@@ -32,13 +38,9 @@ const ActivityCars = ({
             <div
                 className={`h-fit min-w-[264px] w-[264px] rounded-[20px] border-[0.5px] border-[#E0E3EB] p-[15px]`}
             >
-                <Image
-                    height={156}
-                    width={234}
-                    className="rounded-[10px] mb-[13px] w-full aspect-[6/4] object-fill"
-                    src={img}
-                    alt={`${activityName} image`}
-                    priority
+                <LazyLoadImage 
+                    img={img}
+                    activityName={activityName}
                 />
                 <div className="flex items-end justify-between">
                     <div>
