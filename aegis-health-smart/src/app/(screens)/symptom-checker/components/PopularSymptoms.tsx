@@ -3,6 +3,7 @@
 import React from "react";
 import LinkWithChevron from "../../components/LinkWithChevron";
 import { ChevronRightIcon } from "@/components/Svgs";
+import Link from "next/link";
 
 function PopularSymptoms() {
     const [description, setDescription] = React.useState("");
@@ -33,14 +34,14 @@ function PopularSymptoms() {
                 <div className="grid grid-cols-3 gap-5">
                     {data.map((item, id) => {
                         return (
-                            <div
+                            <Link href={`/symptom-checker/ai?ailment=${item}`}
                                 key={id}
                                 className="bg-[#EAF5F9] py-3 px-4 rounded-[10px]"
                             >
                                 <p className="text-lg leading-[26.1px] text-[#101928] text-center font-semibold">
                                     {item}
                                 </p>
-                            </div>
+                            </Link>
                         );
                     })}
                 </div>
