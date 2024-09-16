@@ -1,3 +1,5 @@
+
+export const dynamic = 'force-dynamic'
 import React from "react";
 import ActivityCard from "../../components/ActivityCard";
 import ScrollComponent from "../../components/ScrollComponent";
@@ -8,6 +10,7 @@ interface TodayPickProps {
     totalSessions: number;
 }
 
+
 const fetchData = async () => {
     const url = 'https://exercisedb.p.rapidapi.com/exercises?limit=10&offset=0';
 const options = {
@@ -15,11 +18,11 @@ const options = {
 	headers: {
 		'x-rapidapi-key': '44e1d38ee4msh7f5e486e5ae78d1p170cacjsn4a13faf3bb2b',
 		'x-rapidapi-host': 'exercisedb.p.rapidapi.com'
-	}
+	},
 };
 
 try {
-	const response = await fetch(url, options);
+	const response = await fetch(url, {cache: 'no-store', ...options},);
 	const result = await response.json();
 	// console.log(result);
     return result;
