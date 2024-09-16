@@ -26,7 +26,7 @@ const page = (id: AilmentTyoe) => {
                     </h3>
                 </div>
 
-                <h5>You're here from another page and you're here to look for symptoms of {ailment}</h5>
+                <h5>You&apos;re here from another page and you&apos;re here to look for symptoms of {ailment}</h5>
                 {/* <PopularSymptoms /> */}
             </PageWrapper>
             <SmallPageWrapper>
