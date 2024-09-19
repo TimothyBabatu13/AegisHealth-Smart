@@ -8,16 +8,17 @@ const Message = ({ text, userId } : {
 }) => {
 
     const { user } = useAuthContextProvider();
-    console.log(user?.uid)
+    // console.log(user?.uid)
     return (
         <div className={`mb-2 flex ${user?.uid === userId ? '' : 'flex-row-reverse'} justify-between`}>
-            <div />
-            <div className={`text-sm text-[#141414CC] font-normal leading-[22px] py-2.5 pr-2 px-[15px] ${userId === user?.uid ? 'w-[259px] bg-[#F7F7F7] rounded-t-[12px] rounded-br-[12px]' : 'w-[315px] bg-[#FEEDE7] rounded-t-[12px] rounded-bl-[12px]'}`}>{text}</div>
+            <div className={'w-[20%]'}/>
+            <div className={`text-sm text-[#141414CC] font-normal leading-[22px] py-2.5 pr-2 px-[15px] ${userId === user?.uid ? 'w-[fit-content] bg-[#F7F7F7] rounded-t-[12px] rounded-br-[12px]' : 'w-[fit-content] bg-[#FEEDE7] rounded-t-[12px] rounded-bl-[12px]'}`}>{text}</div>
         </div>
     )
 }
 
 const Messages = () => {
+    
   return (
     <div>
         <Message text="hey" userId="L7egZf4DoZOYLeHLwN8ZAaKNg4o1"/>
@@ -31,5 +32,3 @@ const Messages = () => {
 }
 
 export default Messages
-
-// ${myID === message.senderID ? 'w-[259px] bg-[#F7F7F7] rounded-t-[12px] rounded-br-[12px]' : 'w-[315px] bg-[#FEEDE7] rounded-t-[12px] rounded-bl-[12px]'
