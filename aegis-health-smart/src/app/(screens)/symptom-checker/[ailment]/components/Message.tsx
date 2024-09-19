@@ -1,6 +1,19 @@
 'use client';
 
+import { Skeleton } from "@/components/ui/skeleton";
 import { useAuthContextProvider } from "@/context/AuthContext";
+
+const MessageSkeleton = ( { myOwn = false } : {
+    myOwn?: boolean
+}) => {
+
+    return (
+        <div className={`mb-2 flex ${myOwn ? '' : 'flex-row-reverse'} justify-between`}>
+            <div className={'w-[20%]'}/>
+            <Skeleton className={`h-[50px] bg-slate-600 mb-5 ${myOwn ? "w-[300px] rounded-t-[12px] rounded-br-[12px]": "rounded-t-[12px] w-40 rounded-bl-[12px]"}`}/>
+        </div>
+    )
+} 
 
 const Message = ({ text, userId } : {
     text: string,
@@ -18,15 +31,18 @@ const Message = ({ text, userId } : {
 }
 
 const Messages = () => {
-    
+
   return (
-    <div>
+    <div className="mt-4">
+        <MessageSkeleton myOwn={true}/>
+        <MessageSkeleton />
         <Message text="hey" userId="L7egZf4DoZOYLeHLwN8ZAaKNg4o1"/>
         <Message text="hey" userId="6"/>
         <Message text="What's up?" userId="L7egZf4DoZOYLeHLwN8ZAaKNg4o1"/>
         <Message text="I've been trying to get hold of you since" userId="L7egZf4DoZOYLeHLwN8ZAaKNg4o1"/>
         <Message text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque enim quaerat, quas excepturi temporibus consectetur maiores deleniti alias atque tempora dolor sed eveniet voluptatum magni qui veritatis culpa quo voluptatem illum, cumque reiciendis aut? Non fugit saepe incidunt a." userId="L7egZf4DoZOYLeHLwN8ZAaKNg4o1"/>
-        <Message text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque enim quaerat, quas excepturi temporibus consectetur maiores deleniti alias atque tempora dolor sed eveniet voluptatum magni qui veritatis culpa quo voluptatem illum, cumque reiciendis aut? Non fugit saepe incidunt a." userId="L7egZf4DoZOYLeHLwN8ZAaKNg4o"/>        
+        <Message text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque enim quaerat, quas excepturi temporibus consectetur maiores deleniti alias atque tempora dolor sed eveniet voluptatum magni qui veritatis culpa quo voluptatem illum, cumque reiciendis aut? Non fugit saepe incidunt a." userId="L7egZf4DoZOYLeHLwN8ZAaKNg4o"/> 
+        <Message text="I've been trying to get hold of you since" userId="L7egZf4DoZOYLeHLwN8ZAaKNg4o1"/>       
     </div>
   )
 }

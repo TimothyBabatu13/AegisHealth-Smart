@@ -41,7 +41,7 @@ const page = async (id: AilmentTyoe) => {
     const jj = getData('http://35.175.149.204/chat');
   return (
     <section className="min-[1220px]:flex">
-            <PageWrapper>
+            <PageWrapper clx="!w-[95%] !mx-auto">
                 <div>
                     <h2 className="text-[28px] font-semibold leading-[33.6px]">
                         Symptom Checker
@@ -54,9 +54,9 @@ const page = async (id: AilmentTyoe) => {
                 {/* <h5>You&apos;re here from another page and you&apos;re here to look for symptoms of {ailment}</h5> */}
                 {/* <PopularSymptoms /> */}
             </PageWrapper>
-            <SmallPageWrapper>
+            {/* <SmallPageWrapper>
                 <SuggestedPhysicians />
-            </SmallPageWrapper>
+            </SmallPageWrapper> */}
         </section>
   )
 }
