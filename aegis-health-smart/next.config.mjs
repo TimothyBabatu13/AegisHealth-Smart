@@ -1,7 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['v2.exercisedb.io']
+      remotePatterns: [
+        {
+          hostname: 'v2.exercisedb.io',
+          
+        },
+        {
+          hostname: 'tailwindui.com'
+        } 
+      ],
+        // domains: []
       },
 };
 
