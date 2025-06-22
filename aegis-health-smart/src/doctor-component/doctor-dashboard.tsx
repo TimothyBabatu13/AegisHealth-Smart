@@ -27,7 +27,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Progress } from "@/components/ui/progress"
-import { AccountSettings } from "@/components/AccountSettings"
+import { DoctorAccountSetting } from "@/components/AccountSettings"
+
 
 const todayAppointments = [
   {
@@ -500,7 +501,7 @@ export default function DoctorDashboard() {
             </Card>
           </TabsContent>
           <TabsContent value="settings" className="space-y-6">
-            <AccountSettings />
+            <DoctorAccountSetting />
           </TabsContent>
         </Tabs>
       </div>

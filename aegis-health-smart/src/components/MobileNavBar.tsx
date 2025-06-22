@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { MobileSearch } from "./MobileSearch";
 import { userStore } from "@/stores/userStore";
+import { Settings } from "lucide-react";
 
   
 const MobileNavBar = () => {
@@ -49,6 +50,12 @@ const MobileNavBar = () => {
             url: '/mental-support',
             id: 'fff',
             icon: <MentalSupportIcon active={activeLink === '/mental-support'}/>
+        },
+        {
+            text: 'Settings',
+            url: '/settings',
+            id: 'ppp',
+            icon: <Settings size={18} fill={activeLink === '/settings' ? "#291ED7" : "#667185"} />
         }
     ]
 
