@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef } from "react"
-import { User, Camera, Save, Lock, Bell, Globe, Shield, Smartphone, Mail, Phone, MapPin, Calendar, Clock, Eye, EyeOff } from 'lucide-react'
+import { User, Camera, Save, Lock, Bell,  Shield, Eye, EyeOff } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -483,7 +483,7 @@ export const AccountSettings = () => {
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
                   <Label className="text-[#344054]">Show Online Status</Label>
-                  <p className="text-sm text-[#344054]/70">Let others see when you're online</p>
+                  <p className="text-sm text-[#344054]/70">Let others see when you&apos;re online</p>
                 </div>
                 <Switch
                   checked={privacy.showOnlineStatus}
