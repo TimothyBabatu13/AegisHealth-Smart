@@ -25,6 +25,20 @@ export const CreateNewAccount = async (data : userDetailsType) : Promise<CreateN
         email,
         isDoctor,
       });
+      isDoctor ? (
+        addDoc(collection(db, "specialist"), {
+          email,
+          name: '',
+          profileURL: ''
+        })
+      ) : (
+        addDoc(collection(db, "patient"), {
+          email,
+          name: '',
+          profileURL: ''
+        })
+      )
+      
       return {data: 'Your account has been created', code: 201};
     })
     .catch((error) => {

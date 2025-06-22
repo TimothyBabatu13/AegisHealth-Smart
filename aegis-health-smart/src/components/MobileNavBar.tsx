@@ -12,9 +12,11 @@ import { ActivityIcon, AppointmentIcon, HomeIcon, MentalSupportIcon, SymptomChec
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { MobileSearch } from "./MobileSearch";
+import { userStore } from "@/stores/userStore";
 
   
 const MobileNavBar = () => {
+    const { isDoctor } = userStore()
     const [activeLink, setActiveLink] = useState<string>('');
     const pathName = usePathname();
     const links = [
@@ -71,9 +73,19 @@ const MobileNavBar = () => {
                     <SheetDescription></SheetDescription>
                 </SheetHeader>
                 {
-                    links.map((link, id) => (
-                        <SheetClose className="flex" key={link.id} asChild><Link className={`flex items-center py-3 px-4 text-sm text-[#141414] leading-5 ${activeLink === link.url || id === 1 && toCheckIfURLMatches(link.url)  ? 'bg-[#F2F2FD] rounded-r-[10px] shadow-[#00663547] border-l-2 border-l-[#291ED7] font-medium' : 'font-normal'}`} href={link.url} key={link.id}> <span className="mr-3">{link.icon}</span>{link.text}</Link></SheetClose>
-                    ))
+                    !isDoctor ? (
+                        <>
+                            {
+                            links.map((link, id) => (
+                            <SheetClose className="flex" key={link.id} asChild><Link className={`flex items-center py-3 px-4 text-sm text-[#141414] leading-5 ${activeLink === link.url || id === 1 && toCheckIfURLMatches(link.url)  ? 'bg-[#F2F2FD] rounded-r-[10px] shadow-[#00663547] border-l-2 border-l-[#291ED7] font-medium' : 'font-normal'}`} href={link.url} key={link.id}> <span className="mr-3">{link.icon}</span>{link.text}</Link></SheetClose>
+                        ))
+                }       
+                        </>
+                    ) : (
+                        <>
+                        <h1>Welcome, Doc</h1>
+                        </>
+                    )
                 }
             </SheetContent>
         </Sheet>

@@ -2,7 +2,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react"
-import { ActivityIcon, AppointmentIcon, HomeIcon, MentalSupportIcon, SignOutIcon, SymptomCheckerIcon } from "./Svgs";
+import { ActivityIcon, AppointmentIcon, HomeIcon, MentalSupportIcon,  SymptomCheckerIcon } from "./Svgs";
 
 const NavBar = () => {
     const [activeLink, setActiveLink] = useState<string>('');

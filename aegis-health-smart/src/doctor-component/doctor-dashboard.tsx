@@ -27,6 +27,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Progress } from "@/components/ui/progress"
+import { AccountSettings } from "@/components/AccountSettings"
 
 const todayAppointments = [
   {
@@ -170,7 +171,6 @@ export default function DoctorDashboard() {
         return "bg-blue-100 text-blue-700"
     }
   }
-
   return (
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-6 max-w-7xl">
@@ -262,7 +262,7 @@ export default function DoctorDashboard() {
 
         {/* Main Content */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4 lg:w-[400px]">
+          <TabsList className="grid w-full grid-cols-5 lg:w-[750px]">
             <TabsTrigger value="overview" className="text-[#344054]">
               Overview
             </TabsTrigger>
@@ -274,6 +274,9 @@ export default function DoctorDashboard() {
             </TabsTrigger>
             <TabsTrigger value="messages" className="text-[#344054]">
               Messages
+            </TabsTrigger>
+            <TabsTrigger value="settings" className="text-[#344054]">
+              Settings
             </TabsTrigger>
           </TabsList>
 
@@ -495,6 +498,9 @@ export default function DoctorDashboard() {
                 </div>
               </CardContent>
             </Card>
+          </TabsContent>
+          <TabsContent value="settings" className="space-y-6">
+            <AccountSettings />
           </TabsContent>
         </Tabs>
       </div>
