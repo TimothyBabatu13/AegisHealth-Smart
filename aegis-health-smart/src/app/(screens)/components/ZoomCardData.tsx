@@ -85,7 +85,8 @@ export const ZoomCardAppointmentData = () => {
             isVerified={data?.isVerified}
             type={data?.type}
             img={data?.img}
-            id={data?.id}
+            // id={data?.id}
+            id={crypto.randomUUID()}
         />
         
     )

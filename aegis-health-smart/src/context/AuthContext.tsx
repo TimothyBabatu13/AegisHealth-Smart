@@ -1,10 +1,11 @@
 'use client';
-// import { useContextHook } from '@/utils/useContext';
-import Loader from '@/components/Loader';
-import { app } from '@/config/firebaseConfig';
+
+import { app, db } from '@/config/firebaseConfig';
+import { userStore } from '@/stores/userStore';
 import { AuthContextType } from '@/types/types';
 import { useContextHook } from '@/utils/useContext';
 import { getAuth, onAuthStateChanged, User } from 'firebase/auth';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 import { createContext, useEffect, useState } from 'react'
 
 
@@ -19,24 +20,36 @@ const AuthContext = ({
     const auth = getAuth(app);
     const [id, setId] = useState<string|null>('');
     const [user, setUser] = useState<User | null>(null);
+    const { setIsLoading, setIsDoctor } = userStore();
 
     useEffect(()=> {
       const unsubscribe = onAuthStateChanged(auth, (user) => {
           if (user) {
             setUser(user)
             const uid = user.uid;
-            // console.log(user)
-            // console.log(uid);
             setId(uid);
+            const fetchUserDetails = async() => {
+              const usersRef = collection(db, "users");
+              const q = query(usersRef, where("email", "==", user.email));
+              const querySnapshot = await getDocs(q);
+              
+              const userDoc = querySnapshot.docs[0];
+              const userData = userDoc.data();
+              setIsLoading(false);
+              let isDoctor: boolean;
+              userData.isDoctor ? isDoctor = userData.isDoctor : isDoctor =false
+              setIsDoctor(isDoctor)
+            }
+            fetchUserDetails();
           } else {
+            setIsLoading(false);
             setId(null)
-            console.log("User does not exists")
           }
         });
       return ()=> unsubscribe();
     }, [auth])
 
-    if(id === '') return <Loader />
+    // if(id === '') return <Loader />
   return (
     <Context.Provider value={{id, setId, user}}>
         {children}

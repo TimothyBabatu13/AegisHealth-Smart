@@ -4,6 +4,7 @@ import EmailInput from "@/components/EmailInput";
 import PasswordInput from "@/components/PasswordInput";
 import { useToast } from "@/components/ui/use-toast";
 import { useAuthContextProvider } from "@/context/AuthContext";
+import { userStore } from "@/stores/userStore";
 import { userDetailsType } from "@/types/types";
 import { LoginToExistingAccount } from "@/utils/firebase";
 import formatFirebaseError from "@/utils/formatFirebaseError";
@@ -14,7 +15,7 @@ import { FormEvent, useState } from "react";
 
 const Page = () => {
     const { id, setId } = useAuthContextProvider();
-    console.log(id);
+    const { setIsDoctor, setIsLoading: userSetIsLoading } = userStore();
     const route = useRouter();
     const [userDetails, setUserDetails] = useState<userDetailsType>({
         email: "",
@@ -37,13 +38,15 @@ const Page = () => {
         try {
             LoginToExistingAccount(userDetails)
                 .then((res) => {
-                    const { data, code } = res;
+                    const { data, code, isDoctor } = res;
                     toast({
                         description: formatFirebaseError(
                             data?.uid ? "Login Succesful" : "An error occured"
                         ),
                         variant: code === 500 ? "destructive" : "default",
                     });
+                    setIsDoctor(isDoctor!);
+                    userSetIsLoading(false);
                     setId(res.data?.uid);
                     if (res.data?.uid) {
                         route.push("/");

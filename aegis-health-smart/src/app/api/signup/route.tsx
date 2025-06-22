@@ -5,8 +5,8 @@ import { NextRequest } from "next/server"
 export const POST = async (req: NextRequest) => {
     
     const request : userDetailsType = await req.json();
-    const { email, password } = request;
-    const data : userDetailsType = { email, password }
+    const { email, password, isDoctor } = request;
+    const data : userDetailsType = { email, password, isDoctor }
     
     const result = await CreateNewAccount(data);
 

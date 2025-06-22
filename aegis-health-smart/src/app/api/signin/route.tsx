@@ -10,8 +10,6 @@ export const POST = async (req: NextRequest) => {
     
     const result = await LoginToExistingAccount(data);
 
-    
-
       return new Response(JSON.stringify({result: result.data, status: result.code}), {
         headers: {
           "Content-Type" : "application/json",

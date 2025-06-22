@@ -1,6 +1,8 @@
 "use client";
 import EmailInput from "@/components/EmailInput";
 import PasswordInput from "@/components/PasswordInput";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { userDetailsType } from "@/types/types";
 import formatFirebaseError from "@/utils/formatFirebaseError";
@@ -12,6 +14,7 @@ const Page = () => {
     const [userDetails, setUserDetails] = useState<userDetailsType>({
         email: "",
         password: "",
+        isDoctor: false
     });
     const [loading, setIsLoading] = useState<boolean>(false);
     const { toast } = useToast();
@@ -34,6 +37,7 @@ const Page = () => {
                 body: JSON.stringify({
                     email: userDetails.email,
                     password: userDetails.password,
+                    isDoctor: userDetails.isDoctor
                 }),
             });
             const { result, status } = await res.json();
@@ -42,6 +46,7 @@ const Page = () => {
                 description: formatFirebaseError(result),
                 variant: status === 500 ? "destructive" : "default",
             });
+            
             setIsLoading(false);
         } catch (error) {
             console.log(error);
@@ -101,6 +106,20 @@ const Page = () => {
                                     Onchange={handleChange}
                                     value={userDetails.password}
                                 />
+                            </div>
+                            <div className="flex items-center cursor-pointer gap-2 mt-2">
+                                <Checkbox 
+                                    checked={userDetails.isDoctor}
+                                    onCheckedChange={(checked) => {
+                                      setUserDetails((prev) => ({
+                                        ...prev,
+                                        isDoctor: checked === true
+                                      }));
+                                    }} 
+                                    className=""  
+                                    id="terms"
+                                 />
+                                <Label htmlFor="terms" className="cursor-pointer">Register as a doctor</Label>
                             </div>
                         </div>
 

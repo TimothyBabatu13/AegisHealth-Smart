@@ -4,7 +4,8 @@ import { ChangeEventHandler, Dispatch, SetStateAction } from "react";
 export interface userDetailsType {
     email: string,
     password: string,
-    h?: string
+    h?: string,
+    isDoctor?: boolean
 }
 
 export interface FormInputType {

@@ -10,6 +10,7 @@ interface MedicineScheduleCardType {
 }
 
 const MedicineSchedule = () => {
+    
     const [no, setNo] = useState(0);
     const data : MedicineScheduleCardType[] = [
         {
