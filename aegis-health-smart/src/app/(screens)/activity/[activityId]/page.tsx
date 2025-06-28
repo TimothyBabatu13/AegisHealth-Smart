@@ -56,7 +56,7 @@ const page = async ({ params : {
                 />
             </PageWrapper>
             <SmallPageWrapper>
-                <Vitals />
+                {/* <Vitals /> */}
                 <SupplementsRecommendations />
             </SmallPageWrapper>
         </section>
