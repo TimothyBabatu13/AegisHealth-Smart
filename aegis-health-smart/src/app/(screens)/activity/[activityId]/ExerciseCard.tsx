@@ -32,7 +32,7 @@ const ExerciseCard = ({
         <ul className="ml-40px">
             {
                 instructions.map((instruction, id) => (
-                    <li className=" list-disc" key={id}>{instruction}</li>
+                    <li className=" ml-2" key={id}>{instruction}</li>
                 ))
             }
         </ul>
