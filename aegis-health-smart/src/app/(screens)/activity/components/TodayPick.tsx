@@ -35,7 +35,7 @@ async function TodayPick() {
     const gymData = await fetchData();
 
     return (
-        <div className="text-[#141414]">
+        <div className="text-[#141414] w-full">
             <div className="flex items-center justify-between mt-10">
                 <h2 className="font-semibold text-lg leading-5">
                     Today&apos;s Picks

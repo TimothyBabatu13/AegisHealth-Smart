@@ -3,6 +3,7 @@ import TodayPick from "./components/TodayPick";
 import SmallPageWrapper from "@/components/SmallPageWrapper";
 import Vitals from "./components/Vitals";
 import SupplementsRecommendations from "./components/SupplementsRecommendations";
+import { Suspense } from "react";
 
 const Activity = () => {
     return (
@@ -16,10 +17,12 @@ const Activity = () => {
                         Get expert advice for your symptoms
                     </h3>
                 </div>
-                <TodayPick />
+                <Suspense>
+                    <TodayPick />
+                </Suspense>
             </PageWrapper>
             <SmallPageWrapper>
-                <Vitals />
+                {/* <Vitals /> */}
                 <SupplementsRecommendations />
             </SmallPageWrapper>
         </section>

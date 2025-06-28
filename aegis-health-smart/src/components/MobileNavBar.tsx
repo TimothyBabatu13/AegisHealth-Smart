@@ -8,7 +8,7 @@ import {
     SheetTrigger,
   } from "@/components/ui/sheet"
 import Link from "next/link"
-import { ActivityIcon, AppointmentIcon, HomeIcon, MentalSupportIcon, SymptomCheckerIcon } from "./Svgs"
+import { ActivityIcon, AppointmentIcon, HomeIcon, SymptomCheckerIcon } from "./Svgs"
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { MobileSearch } from "./MobileSearch";
@@ -29,9 +29,9 @@ const MobileNavBar = () => {
         },
         {
             text: 'Appointments',
-            url: '/appointment',
+            url: '/schedule',
             id: 'bbb',
-            icon: <AppointmentIcon active={activeLink === '/appointment'}/>
+            icon: <AppointmentIcon active={activeLink === '/schedule'}/>
         },
         {
             text: 'Symptom Checker',
@@ -44,12 +44,6 @@ const MobileNavBar = () => {
             url: '/activity',
             id: 'ddd',
             icon: <ActivityIcon active={activeLink === '/activity'}/>
-        },
-        {
-            text: 'Mental Support',
-            url: '/mental-support',
-            id: 'fff',
-            icon: <MentalSupportIcon active={activeLink === '/mental-support'}/>
         },
         {
             text: 'Settings',

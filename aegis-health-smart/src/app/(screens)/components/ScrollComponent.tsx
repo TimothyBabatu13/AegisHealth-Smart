@@ -17,7 +17,7 @@ function ScrollComponent({children, className}: ScrollComponentProps) {
                 <div
                     id="gallery"
                     ref={galleryRef}
-                    className={`flex items-center gap-5 overflow-x-scroll scroll-smooth ${className}`}
+                    className={`flex items-center gap-5 overflow-x-scroll overflow-hidden scroll-smooth ${className}`}
                 >
                     {children}
                 </div>

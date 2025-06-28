@@ -1,0 +1,2144 @@
+[
+  {
+    "bodyPart": "chest",
+    "equipment": "body weight",
+    "gifUrl": "https://v2.exercisedb.io/image/b2cdc2323f44",
+    "id": "0010",
+    "name": "body weight chest exercise 1",
+    "target": "pectorals",
+    "secondaryMuscles": [
+      "triceps",
+      "anterior deltoids"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A body weight exercise targeting the pectorals and working on triceps, anterior deltoids. Great for plyometric training.",
+    "difficulty": "beginner",
+    "category": "plyometric"
+  },
+  {
+    "bodyPart": "core",
+    "equipment": "kettlebell",
+    "gifUrl": "https://v2.exercisedb.io/image/e44dc7b6782b",
+    "id": "0011",
+    "name": "kettlebell core exercise 2",
+    "target": "core",
+    "secondaryMuscles": [
+      "obliques",
+      "lower back"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A kettlebell exercise targeting the core and working on obliques, lower back. Great for flexibility training.",
+    "difficulty": "intermediate",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "upper legs",
+    "equipment": "cable",
+    "gifUrl": "https://v2.exercisedb.io/image/d994d9b5cba4",
+    "id": "0012",
+    "name": "cable upper legs exercise 3",
+    "target": "glutes",
+    "secondaryMuscles": [
+      "quads",
+      "hamstrings"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A cable exercise targeting the glutes and working on quads, hamstrings. Great for flexibility training.",
+    "difficulty": "advanced",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "calves",
+    "equipment": "machine",
+    "gifUrl": "https://v2.exercisedb.io/image/70a59374861f",
+    "id": "0013",
+    "name": "machine calves exercise 4",
+    "target": "calves",
+    "secondaryMuscles": [
+      "tibialis anterior"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A machine exercise targeting the calves and working on tibialis anterior. Great for cardio training.",
+    "difficulty": "intermediate",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "core",
+    "equipment": "body weight",
+    "gifUrl": "https://v2.exercisedb.io/image/f83340fb8bef",
+    "id": "0014",
+    "name": "body weight core exercise 5",
+    "target": "core",
+    "secondaryMuscles": [
+      "obliques",
+      "lower back"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A body weight exercise targeting the core and working on obliques, lower back. Great for cardio training.",
+    "difficulty": "intermediate",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "core",
+    "equipment": "machine",
+    "gifUrl": "https://v2.exercisedb.io/image/3d3b765ac55b",
+    "id": "0015",
+    "name": "machine core exercise 6",
+    "target": "core",
+    "secondaryMuscles": [
+      "obliques",
+      "lower back"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A machine exercise targeting the core and working on obliques, lower back. Great for strength training.",
+    "difficulty": "advanced",
+    "category": "strength"
+  },
+  {
+    "bodyPart": "shoulders",
+    "equipment": "dumbbell",
+    "gifUrl": "https://v2.exercisedb.io/image/e3b904c96d7e",
+    "id": "0016",
+    "name": "dumbbell shoulders exercise 7",
+    "target": "delts",
+    "secondaryMuscles": [
+      "traps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A dumbbell exercise targeting the delts and working on traps. Great for balance training.",
+    "difficulty": "beginner",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "calves",
+    "equipment": "resistance band",
+    "gifUrl": "https://v2.exercisedb.io/image/24d75996dc29",
+    "id": "0017",
+    "name": "resistance band calves exercise 8",
+    "target": "calves",
+    "secondaryMuscles": [
+      "tibialis anterior"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A resistance band exercise targeting the calves and working on tibialis anterior. Great for flexibility training.",
+    "difficulty": "advanced",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "body weight",
+    "gifUrl": "https://v2.exercisedb.io/image/d28f9dd0f9a1",
+    "id": "0018",
+    "name": "body weight arms exercise 9",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A body weight exercise targeting the biceps and working on triceps. Great for balance training.",
+    "difficulty": "advanced",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "calves",
+    "equipment": "dumbbell",
+    "gifUrl": "https://v2.exercisedb.io/image/2d7499f28e52",
+    "id": "0019",
+    "name": "dumbbell calves exercise 10",
+    "target": "calves",
+    "secondaryMuscles": [
+      "tibialis anterior"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A dumbbell exercise targeting the calves and working on tibialis anterior. Great for balance training.",
+    "difficulty": "advanced",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "calves",
+    "equipment": "cable",
+    "gifUrl": "https://v2.exercisedb.io/image/a8bd771be0b9",
+    "id": "0020",
+    "name": "cable calves exercise 11",
+    "target": "calves",
+    "secondaryMuscles": [
+      "tibialis anterior"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A cable exercise targeting the calves and working on tibialis anterior. Great for balance training.",
+    "difficulty": "intermediate",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "calves",
+    "equipment": "barbell",
+    "gifUrl": "https://v2.exercisedb.io/image/ca7a27ee12a9",
+    "id": "0021",
+    "name": "barbell calves exercise 12",
+    "target": "calves",
+    "secondaryMuscles": [
+      "tibialis anterior"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A barbell exercise targeting the calves and working on tibialis anterior. Great for flexibility training.",
+    "difficulty": "advanced",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "waist",
+    "equipment": "dumbbell",
+    "gifUrl": "https://v2.exercisedb.io/image/3153f6a98e7f",
+    "id": "0022",
+    "name": "dumbbell waist exercise 13",
+    "target": "abs",
+    "secondaryMuscles": [
+      "obliques"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A dumbbell exercise targeting the abs and working on obliques. Great for strength training.",
+    "difficulty": "intermediate",
+    "category": "strength"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "cable",
+    "gifUrl": "https://v2.exercisedb.io/image/3fdcd78a2cd6",
+    "id": "0023",
+    "name": "cable arms exercise 14",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A cable exercise targeting the biceps and working on triceps. Great for balance training.",
+    "difficulty": "intermediate",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "calves",
+    "equipment": "barbell",
+    "gifUrl": "https://v2.exercisedb.io/image/aff0647be18e",
+    "id": "0024",
+    "name": "barbell calves exercise 15",
+    "target": "calves",
+    "secondaryMuscles": [
+      "tibialis anterior"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A barbell exercise targeting the calves and working on tibialis anterior. Great for balance training.",
+    "difficulty": "beginner",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "upper legs",
+    "equipment": "machine",
+    "gifUrl": "https://v2.exercisedb.io/image/83b4816d5e10",
+    "id": "0025",
+    "name": "machine upper legs exercise 16",
+    "target": "glutes",
+    "secondaryMuscles": [
+      "quads",
+      "hamstrings"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A machine exercise targeting the glutes and working on quads, hamstrings. Great for strength training.",
+    "difficulty": "intermediate",
+    "category": "strength"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "kettlebell",
+    "gifUrl": "https://v2.exercisedb.io/image/25a0e9459058",
+    "id": "0026",
+    "name": "kettlebell arms exercise 17",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A kettlebell exercise targeting the biceps and working on triceps. Great for cardio training.",
+    "difficulty": "intermediate",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "calves",
+    "equipment": "kettlebell",
+    "gifUrl": "https://v2.exercisedb.io/image/ffe82662f8f2",
+    "id": "0027",
+    "name": "kettlebell calves exercise 18",
+    "target": "calves",
+    "secondaryMuscles": [
+      "tibialis anterior"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A kettlebell exercise targeting the calves and working on tibialis anterior. Great for balance training.",
+    "difficulty": "advanced",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "chest",
+    "equipment": "cable",
+    "gifUrl": "https://v2.exercisedb.io/image/abb3c4f45117",
+    "id": "0028",
+    "name": "cable chest exercise 19",
+    "target": "pectorals",
+    "secondaryMuscles": [
+      "triceps",
+      "anterior deltoids"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A cable exercise targeting the pectorals and working on triceps, anterior deltoids. Great for balance training.",
+    "difficulty": "beginner",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "waist",
+    "equipment": "dumbbell",
+    "gifUrl": "https://v2.exercisedb.io/image/3234cea2321c",
+    "id": "0029",
+    "name": "dumbbell waist exercise 20",
+    "target": "abs",
+    "secondaryMuscles": [
+      "obliques"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A dumbbell exercise targeting the abs and working on obliques. Great for flexibility training.",
+    "difficulty": "advanced",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "dumbbell",
+    "gifUrl": "https://v2.exercisedb.io/image/93c98436117c",
+    "id": "0030",
+    "name": "dumbbell arms exercise 21",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A dumbbell exercise targeting the biceps and working on triceps. Great for flexibility training.",
+    "difficulty": "advanced",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "core",
+    "equipment": "cable",
+    "gifUrl": "https://v2.exercisedb.io/image/c991585bea0e",
+    "id": "0031",
+    "name": "cable core exercise 22",
+    "target": "core",
+    "secondaryMuscles": [
+      "obliques",
+      "lower back"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A cable exercise targeting the core and working on obliques, lower back. Great for cardio training.",
+    "difficulty": "beginner",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "waist",
+    "equipment": "barbell",
+    "gifUrl": "https://v2.exercisedb.io/image/871f7778f07d",
+    "id": "0032",
+    "name": "barbell waist exercise 23",
+    "target": "abs",
+    "secondaryMuscles": [
+      "obliques"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A barbell exercise targeting the abs and working on obliques. Great for strength training.",
+    "difficulty": "intermediate",
+    "category": "strength"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "body weight",
+    "gifUrl": "https://v2.exercisedb.io/image/f5fbbbee97f4",
+    "id": "0033",
+    "name": "body weight arms exercise 24",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A body weight exercise targeting the biceps and working on triceps. Great for cardio training.",
+    "difficulty": "intermediate",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "shoulders",
+    "equipment": "resistance band",
+    "gifUrl": "https://v2.exercisedb.io/image/f0e8738fe864",
+    "id": "0034",
+    "name": "resistance band shoulders exercise 25",
+    "target": "delts",
+    "secondaryMuscles": [
+      "traps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A resistance band exercise targeting the delts and working on traps. Great for flexibility training.",
+    "difficulty": "beginner",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "core",
+    "equipment": "cable",
+    "gifUrl": "https://v2.exercisedb.io/image/3966d37dc5b7",
+    "id": "0035",
+    "name": "cable core exercise 26",
+    "target": "core",
+    "secondaryMuscles": [
+      "obliques",
+      "lower back"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A cable exercise targeting the core and working on obliques, lower back. Great for cardio training.",
+    "difficulty": "intermediate",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "waist",
+    "equipment": "body weight",
+    "gifUrl": "https://v2.exercisedb.io/image/04bab3941bf8",
+    "id": "0036",
+    "name": "body weight waist exercise 27",
+    "target": "abs",
+    "secondaryMuscles": [
+      "obliques"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A body weight exercise targeting the abs and working on obliques. Great for balance training.",
+    "difficulty": "intermediate",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "calves",
+    "equipment": "cable",
+    "gifUrl": "https://v2.exercisedb.io/image/d541822bd704",
+    "id": "0037",
+    "name": "cable calves exercise 28",
+    "target": "calves",
+    "secondaryMuscles": [
+      "tibialis anterior"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A cable exercise targeting the calves and working on tibialis anterior. Great for strength training.",
+    "difficulty": "intermediate",
+    "category": "strength"
+  },
+  {
+    "bodyPart": "upper legs",
+    "equipment": "dumbbell",
+    "gifUrl": "https://v2.exercisedb.io/image/f8700e0143d0",
+    "id": "0038",
+    "name": "dumbbell upper legs exercise 29",
+    "target": "glutes",
+    "secondaryMuscles": [
+      "quads",
+      "hamstrings"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A dumbbell exercise targeting the glutes and working on quads, hamstrings. Great for strength training.",
+    "difficulty": "intermediate",
+    "category": "strength"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "resistance band",
+    "gifUrl": "https://v2.exercisedb.io/image/8ae1a6a89715",
+    "id": "0039",
+    "name": "resistance band arms exercise 30",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A resistance band exercise targeting the biceps and working on triceps. Great for cardio training.",
+    "difficulty": "advanced",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "upper legs",
+    "equipment": "resistance band",
+    "gifUrl": "https://v2.exercisedb.io/image/8dd2c58e7fa1",
+    "id": "0040",
+    "name": "resistance band upper legs exercise 31",
+    "target": "glutes",
+    "secondaryMuscles": [
+      "quads",
+      "hamstrings"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A resistance band exercise targeting the glutes and working on quads, hamstrings. Great for flexibility training.",
+    "difficulty": "intermediate",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "chest",
+    "equipment": "body weight",
+    "gifUrl": "https://v2.exercisedb.io/image/02baae36b9fe",
+    "id": "0041",
+    "name": "body weight chest exercise 32",
+    "target": "pectorals",
+    "secondaryMuscles": [
+      "triceps",
+      "anterior deltoids"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A body weight exercise targeting the pectorals and working on triceps, anterior deltoids. Great for flexibility training.",
+    "difficulty": "intermediate",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "shoulders",
+    "equipment": "body weight",
+    "gifUrl": "https://v2.exercisedb.io/image/9a448f50ce4a",
+    "id": "0042",
+    "name": "body weight shoulders exercise 33",
+    "target": "delts",
+    "secondaryMuscles": [
+      "traps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A body weight exercise targeting the delts and working on traps. Great for plyometric training.",
+    "difficulty": "beginner",
+    "category": "plyometric"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "dumbbell",
+    "gifUrl": "https://v2.exercisedb.io/image/d25dd8bb1469",
+    "id": "0043",
+    "name": "dumbbell arms exercise 34",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A dumbbell exercise targeting the biceps and working on triceps. Great for cardio training.",
+    "difficulty": "advanced",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "back",
+    "equipment": "kettlebell",
+    "gifUrl": "https://v2.exercisedb.io/image/5a3908857872",
+    "id": "0044",
+    "name": "kettlebell back exercise 35",
+    "target": "lats",
+    "secondaryMuscles": [
+      "rhomboids",
+      "traps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A kettlebell exercise targeting the lats and working on rhomboids, traps. Great for cardio training.",
+    "difficulty": "beginner",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "core",
+    "equipment": "resistance band",
+    "gifUrl": "https://v2.exercisedb.io/image/c35ea7e764a4",
+    "id": "0045",
+    "name": "resistance band core exercise 36",
+    "target": "core",
+    "secondaryMuscles": [
+      "obliques",
+      "lower back"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A resistance band exercise targeting the core and working on obliques, lower back. Great for plyometric training.",
+    "difficulty": "advanced",
+    "category": "plyometric"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "kettlebell",
+    "gifUrl": "https://v2.exercisedb.io/image/475e9e828381",
+    "id": "0046",
+    "name": "kettlebell arms exercise 37",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A kettlebell exercise targeting the biceps and working on triceps. Great for balance training.",
+    "difficulty": "beginner",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "kettlebell",
+    "gifUrl": "https://v2.exercisedb.io/image/f4456a08e7bd",
+    "id": "0047",
+    "name": "kettlebell arms exercise 38",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A kettlebell exercise targeting the biceps and working on triceps. Great for balance training.",
+    "difficulty": "beginner",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "upper legs",
+    "equipment": "cable",
+    "gifUrl": "https://v2.exercisedb.io/image/4e1b5e9f4ce4",
+    "id": "0048",
+    "name": "cable upper legs exercise 39",
+    "target": "glutes",
+    "secondaryMuscles": [
+      "quads",
+      "hamstrings"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A cable exercise targeting the glutes and working on quads, hamstrings. Great for strength training.",
+    "difficulty": "beginner",
+    "category": "strength"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "body weight",
+    "gifUrl": "https://v2.exercisedb.io/image/511b4c5a2737",
+    "id": "0049",
+    "name": "body weight arms exercise 40",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A body weight exercise targeting the biceps and working on triceps. Great for cardio training.",
+    "difficulty": "advanced",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "waist",
+    "equipment": "kettlebell",
+    "gifUrl": "https://v2.exercisedb.io/image/fba56afd4986",
+    "id": "0050",
+    "name": "kettlebell waist exercise 41",
+    "target": "abs",
+    "secondaryMuscles": [
+      "obliques"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A kettlebell exercise targeting the abs and working on obliques. Great for balance training.",
+    "difficulty": "intermediate",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "shoulders",
+    "equipment": "dumbbell",
+    "gifUrl": "https://v2.exercisedb.io/image/485273311e00",
+    "id": "0051",
+    "name": "dumbbell shoulders exercise 42",
+    "target": "delts",
+    "secondaryMuscles": [
+      "traps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A dumbbell exercise targeting the delts and working on traps. Great for balance training.",
+    "difficulty": "intermediate",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "upper legs",
+    "equipment": "kettlebell",
+    "gifUrl": "https://v2.exercisedb.io/image/f2039dadca7e",
+    "id": "0052",
+    "name": "kettlebell upper legs exercise 43",
+    "target": "glutes",
+    "secondaryMuscles": [
+      "quads",
+      "hamstrings"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A kettlebell exercise targeting the glutes and working on quads, hamstrings. Great for plyometric training.",
+    "difficulty": "advanced",
+    "category": "plyometric"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "machine",
+    "gifUrl": "https://v2.exercisedb.io/image/a48dd5ddb3a5",
+    "id": "0053",
+    "name": "machine arms exercise 44",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A machine exercise targeting the biceps and working on triceps. Great for balance training.",
+    "difficulty": "advanced",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "calves",
+    "equipment": "machine",
+    "gifUrl": "https://v2.exercisedb.io/image/e5ab85b199d9",
+    "id": "0054",
+    "name": "machine calves exercise 45",
+    "target": "calves",
+    "secondaryMuscles": [
+      "tibialis anterior"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A machine exercise targeting the calves and working on tibialis anterior. Great for cardio training.",
+    "difficulty": "intermediate",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "core",
+    "equipment": "kettlebell",
+    "gifUrl": "https://v2.exercisedb.io/image/9cf0da1ae48d",
+    "id": "0055",
+    "name": "kettlebell core exercise 46",
+    "target": "core",
+    "secondaryMuscles": [
+      "obliques",
+      "lower back"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A kettlebell exercise targeting the core and working on obliques, lower back. Great for plyometric training.",
+    "difficulty": "intermediate",
+    "category": "plyometric"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "dumbbell",
+    "gifUrl": "https://v2.exercisedb.io/image/bc2fbc817d0c",
+    "id": "0056",
+    "name": "dumbbell arms exercise 47",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A dumbbell exercise targeting the biceps and working on triceps. Great for plyometric training.",
+    "difficulty": "beginner",
+    "category": "plyometric"
+  },
+  {
+    "bodyPart": "upper legs",
+    "equipment": "resistance band",
+    "gifUrl": "https://v2.exercisedb.io/image/b9d752bc2afd",
+    "id": "0057",
+    "name": "resistance band upper legs exercise 48",
+    "target": "glutes",
+    "secondaryMuscles": [
+      "quads",
+      "hamstrings"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A resistance band exercise targeting the glutes and working on quads, hamstrings. Great for flexibility training.",
+    "difficulty": "intermediate",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "upper legs",
+    "equipment": "resistance band",
+    "gifUrl": "https://v2.exercisedb.io/image/9ad8675e02e9",
+    "id": "0058",
+    "name": "resistance band upper legs exercise 49",
+    "target": "glutes",
+    "secondaryMuscles": [
+      "quads",
+      "hamstrings"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A resistance band exercise targeting the glutes and working on quads, hamstrings. Great for balance training.",
+    "difficulty": "beginner",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "back",
+    "equipment": "body weight",
+    "gifUrl": "https://v2.exercisedb.io/image/993755c42b6e",
+    "id": "0059",
+    "name": "body weight back exercise 50",
+    "target": "lats",
+    "secondaryMuscles": [
+      "rhomboids",
+      "traps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A body weight exercise targeting the lats and working on rhomboids, traps. Great for flexibility training.",
+    "difficulty": "intermediate",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "chest",
+    "equipment": "machine",
+    "gifUrl": "https://v2.exercisedb.io/image/8e1095d3c558",
+    "id": "0060",
+    "name": "machine chest exercise 51",
+    "target": "pectorals",
+    "secondaryMuscles": [
+      "triceps",
+      "anterior deltoids"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A machine exercise targeting the pectorals and working on triceps, anterior deltoids. Great for strength training.",
+    "difficulty": "beginner",
+    "category": "strength"
+  },
+  {
+    "bodyPart": "chest",
+    "equipment": "dumbbell",
+    "gifUrl": "https://v2.exercisedb.io/image/940ef2d8e957",
+    "id": "0061",
+    "name": "dumbbell chest exercise 52",
+    "target": "pectorals",
+    "secondaryMuscles": [
+      "triceps",
+      "anterior deltoids"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A dumbbell exercise targeting the pectorals and working on triceps, anterior deltoids. Great for strength training.",
+    "difficulty": "intermediate",
+    "category": "strength"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "kettlebell",
+    "gifUrl": "https://v2.exercisedb.io/image/acaaa6f53f00",
+    "id": "0062",
+    "name": "kettlebell arms exercise 53",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A kettlebell exercise targeting the biceps and working on triceps. Great for balance training.",
+    "difficulty": "advanced",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "chest",
+    "equipment": "dumbbell",
+    "gifUrl": "https://v2.exercisedb.io/image/dd2c526e1fbf",
+    "id": "0063",
+    "name": "dumbbell chest exercise 54",
+    "target": "pectorals",
+    "secondaryMuscles": [
+      "triceps",
+      "anterior deltoids"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A dumbbell exercise targeting the pectorals and working on triceps, anterior deltoids. Great for plyometric training.",
+    "difficulty": "beginner",
+    "category": "plyometric"
+  },
+  {
+    "bodyPart": "calves",
+    "equipment": "cable",
+    "gifUrl": "https://v2.exercisedb.io/image/0b65baf1c7dc",
+    "id": "0064",
+    "name": "cable calves exercise 55",
+    "target": "calves",
+    "secondaryMuscles": [
+      "tibialis anterior"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A cable exercise targeting the calves and working on tibialis anterior. Great for flexibility training.",
+    "difficulty": "advanced",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "upper legs",
+    "equipment": "cable",
+    "gifUrl": "https://v2.exercisedb.io/image/8c553cda38cc",
+    "id": "0065",
+    "name": "cable upper legs exercise 56",
+    "target": "glutes",
+    "secondaryMuscles": [
+      "quads",
+      "hamstrings"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A cable exercise targeting the glutes and working on quads, hamstrings. Great for plyometric training.",
+    "difficulty": "advanced",
+    "category": "plyometric"
+  },
+  {
+    "bodyPart": "waist",
+    "equipment": "barbell",
+    "gifUrl": "https://v2.exercisedb.io/image/53be42f5a0f5",
+    "id": "0066",
+    "name": "barbell waist exercise 57",
+    "target": "abs",
+    "secondaryMuscles": [
+      "obliques"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A barbell exercise targeting the abs and working on obliques. Great for cardio training.",
+    "difficulty": "advanced",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "waist",
+    "equipment": "kettlebell",
+    "gifUrl": "https://v2.exercisedb.io/image/1d58097d8cc4",
+    "id": "0067",
+    "name": "kettlebell waist exercise 58",
+    "target": "abs",
+    "secondaryMuscles": [
+      "obliques"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A kettlebell exercise targeting the abs and working on obliques. Great for strength training.",
+    "difficulty": "intermediate",
+    "category": "strength"
+  },
+  {
+    "bodyPart": "chest",
+    "equipment": "barbell",
+    "gifUrl": "https://v2.exercisedb.io/image/d0fcdeb8106b",
+    "id": "0068",
+    "name": "barbell chest exercise 59",
+    "target": "pectorals",
+    "secondaryMuscles": [
+      "triceps",
+      "anterior deltoids"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A barbell exercise targeting the pectorals and working on triceps, anterior deltoids. Great for cardio training.",
+    "difficulty": "advanced",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "shoulders",
+    "equipment": "dumbbell",
+    "gifUrl": "https://v2.exercisedb.io/image/3f7bab4b039f",
+    "id": "0069",
+    "name": "dumbbell shoulders exercise 60",
+    "target": "delts",
+    "secondaryMuscles": [
+      "traps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A dumbbell exercise targeting the delts and working on traps. Great for balance training.",
+    "difficulty": "advanced",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "back",
+    "equipment": "dumbbell",
+    "gifUrl": "https://v2.exercisedb.io/image/8c7a97987a5a",
+    "id": "0070",
+    "name": "dumbbell back exercise 61",
+    "target": "lats",
+    "secondaryMuscles": [
+      "rhomboids",
+      "traps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A dumbbell exercise targeting the lats and working on rhomboids, traps. Great for strength training.",
+    "difficulty": "beginner",
+    "category": "strength"
+  },
+  {
+    "bodyPart": "upper legs",
+    "equipment": "resistance band",
+    "gifUrl": "https://v2.exercisedb.io/image/9432778dd9c0",
+    "id": "0071",
+    "name": "resistance band upper legs exercise 62",
+    "target": "glutes",
+    "secondaryMuscles": [
+      "quads",
+      "hamstrings"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A resistance band exercise targeting the glutes and working on quads, hamstrings. Great for strength training.",
+    "difficulty": "advanced",
+    "category": "strength"
+  },
+  {
+    "bodyPart": "chest",
+    "equipment": "cable",
+    "gifUrl": "https://v2.exercisedb.io/image/de98bdba2ee7",
+    "id": "0072",
+    "name": "cable chest exercise 63",
+    "target": "pectorals",
+    "secondaryMuscles": [
+      "triceps",
+      "anterior deltoids"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A cable exercise targeting the pectorals and working on triceps, anterior deltoids. Great for balance training.",
+    "difficulty": "intermediate",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "calves",
+    "equipment": "resistance band",
+    "gifUrl": "https://v2.exercisedb.io/image/be7306fa80c1",
+    "id": "0073",
+    "name": "resistance band calves exercise 64",
+    "target": "calves",
+    "secondaryMuscles": [
+      "tibialis anterior"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A resistance band exercise targeting the calves and working on tibialis anterior. Great for strength training.",
+    "difficulty": "advanced",
+    "category": "strength"
+  },
+  {
+    "bodyPart": "waist",
+    "equipment": "cable",
+    "gifUrl": "https://v2.exercisedb.io/image/81315038e651",
+    "id": "0074",
+    "name": "cable waist exercise 65",
+    "target": "abs",
+    "secondaryMuscles": [
+      "obliques"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A cable exercise targeting the abs and working on obliques. Great for plyometric training.",
+    "difficulty": "beginner",
+    "category": "plyometric"
+  },
+  {
+    "bodyPart": "chest",
+    "equipment": "kettlebell",
+    "gifUrl": "https://v2.exercisedb.io/image/bdba627c6ca6",
+    "id": "0075",
+    "name": "kettlebell chest exercise 66",
+    "target": "pectorals",
+    "secondaryMuscles": [
+      "triceps",
+      "anterior deltoids"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A kettlebell exercise targeting the pectorals and working on triceps, anterior deltoids. Great for strength training.",
+    "difficulty": "advanced",
+    "category": "strength"
+  },
+  {
+    "bodyPart": "waist",
+    "equipment": "machine",
+    "gifUrl": "https://v2.exercisedb.io/image/f75d6f46ffd9",
+    "id": "0076",
+    "name": "machine waist exercise 67",
+    "target": "abs",
+    "secondaryMuscles": [
+      "obliques"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A machine exercise targeting the abs and working on obliques. Great for cardio training.",
+    "difficulty": "intermediate",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "barbell",
+    "gifUrl": "https://v2.exercisedb.io/image/7bbdf10510f9",
+    "id": "0077",
+    "name": "barbell arms exercise 68",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A barbell exercise targeting the biceps and working on triceps. Great for flexibility training.",
+    "difficulty": "beginner",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "core",
+    "equipment": "cable",
+    "gifUrl": "https://v2.exercisedb.io/image/ec21b906078f",
+    "id": "0078",
+    "name": "cable core exercise 69",
+    "target": "core",
+    "secondaryMuscles": [
+      "obliques",
+      "lower back"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A cable exercise targeting the core and working on obliques, lower back. Great for balance training.",
+    "difficulty": "intermediate",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "barbell",
+    "gifUrl": "https://v2.exercisedb.io/image/7abda88ced7e",
+    "id": "0079",
+    "name": "barbell arms exercise 70",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A barbell exercise targeting the biceps and working on triceps. Great for balance training.",
+    "difficulty": "advanced",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "core",
+    "equipment": "barbell",
+    "gifUrl": "https://v2.exercisedb.io/image/934171072c61",
+    "id": "0080",
+    "name": "barbell core exercise 71",
+    "target": "core",
+    "secondaryMuscles": [
+      "obliques",
+      "lower back"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A barbell exercise targeting the core and working on obliques, lower back. Great for plyometric training.",
+    "difficulty": "beginner",
+    "category": "plyometric"
+  },
+  {
+    "bodyPart": "waist",
+    "equipment": "barbell",
+    "gifUrl": "https://v2.exercisedb.io/image/92e19f21ed29",
+    "id": "0081",
+    "name": "barbell waist exercise 72",
+    "target": "abs",
+    "secondaryMuscles": [
+      "obliques"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A barbell exercise targeting the abs and working on obliques. Great for flexibility training.",
+    "difficulty": "beginner",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "shoulders",
+    "equipment": "dumbbell",
+    "gifUrl": "https://v2.exercisedb.io/image/6863623b925d",
+    "id": "0082",
+    "name": "dumbbell shoulders exercise 73",
+    "target": "delts",
+    "secondaryMuscles": [
+      "traps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A dumbbell exercise targeting the delts and working on traps. Great for plyometric training.",
+    "difficulty": "intermediate",
+    "category": "plyometric"
+  },
+  {
+    "bodyPart": "core",
+    "equipment": "kettlebell",
+    "gifUrl": "https://v2.exercisedb.io/image/fb8b99adedce",
+    "id": "0083",
+    "name": "kettlebell core exercise 74",
+    "target": "core",
+    "secondaryMuscles": [
+      "obliques",
+      "lower back"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A kettlebell exercise targeting the core and working on obliques, lower back. Great for flexibility training.",
+    "difficulty": "intermediate",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "back",
+    "equipment": "body weight",
+    "gifUrl": "https://v2.exercisedb.io/image/63c1238c453c",
+    "id": "0084",
+    "name": "body weight back exercise 75",
+    "target": "lats",
+    "secondaryMuscles": [
+      "rhomboids",
+      "traps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A body weight exercise targeting the lats and working on rhomboids, traps. Great for cardio training.",
+    "difficulty": "intermediate",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "waist",
+    "equipment": "body weight",
+    "gifUrl": "https://v2.exercisedb.io/image/a88d38a08638",
+    "id": "0085",
+    "name": "body weight waist exercise 76",
+    "target": "abs",
+    "secondaryMuscles": [
+      "obliques"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A body weight exercise targeting the abs and working on obliques. Great for strength training.",
+    "difficulty": "advanced",
+    "category": "strength"
+  },
+  {
+    "bodyPart": "upper legs",
+    "equipment": "body weight",
+    "gifUrl": "https://v2.exercisedb.io/image/4ef69bcae4d1",
+    "id": "0086",
+    "name": "body weight upper legs exercise 77",
+    "target": "glutes",
+    "secondaryMuscles": [
+      "quads",
+      "hamstrings"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A body weight exercise targeting the glutes and working on quads, hamstrings. Great for balance training.",
+    "difficulty": "advanced",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "upper legs",
+    "equipment": "cable",
+    "gifUrl": "https://v2.exercisedb.io/image/962499d353b4",
+    "id": "0087",
+    "name": "cable upper legs exercise 78",
+    "target": "glutes",
+    "secondaryMuscles": [
+      "quads",
+      "hamstrings"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A cable exercise targeting the glutes and working on quads, hamstrings. Great for flexibility training.",
+    "difficulty": "advanced",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "kettlebell",
+    "gifUrl": "https://v2.exercisedb.io/image/a22613089d70",
+    "id": "0088",
+    "name": "kettlebell arms exercise 79",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A kettlebell exercise targeting the biceps and working on triceps. Great for cardio training.",
+    "difficulty": "beginner",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "back",
+    "equipment": "barbell",
+    "gifUrl": "https://v2.exercisedb.io/image/e9336b8e94c2",
+    "id": "0089",
+    "name": "barbell back exercise 80",
+    "target": "lats",
+    "secondaryMuscles": [
+      "rhomboids",
+      "traps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A barbell exercise targeting the lats and working on rhomboids, traps. Great for cardio training.",
+    "difficulty": "advanced",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "kettlebell",
+    "gifUrl": "https://v2.exercisedb.io/image/8615a1a5efe6",
+    "id": "0090",
+    "name": "kettlebell arms exercise 81",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A kettlebell exercise targeting the biceps and working on triceps. Great for strength training.",
+    "difficulty": "beginner",
+    "category": "strength"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "barbell",
+    "gifUrl": "https://v2.exercisedb.io/image/9b210490590d",
+    "id": "0091",
+    "name": "barbell arms exercise 82",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A barbell exercise targeting the biceps and working on triceps. Great for strength training.",
+    "difficulty": "advanced",
+    "category": "strength"
+  },
+  {
+    "bodyPart": "calves",
+    "equipment": "body weight",
+    "gifUrl": "https://v2.exercisedb.io/image/555b123af422",
+    "id": "0092",
+    "name": "body weight calves exercise 83",
+    "target": "calves",
+    "secondaryMuscles": [
+      "tibialis anterior"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A body weight exercise targeting the calves and working on tibialis anterior. Great for balance training.",
+    "difficulty": "intermediate",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "waist",
+    "equipment": "barbell",
+    "gifUrl": "https://v2.exercisedb.io/image/ef6f9a0d94f4",
+    "id": "0093",
+    "name": "barbell waist exercise 84",
+    "target": "abs",
+    "secondaryMuscles": [
+      "obliques"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A barbell exercise targeting the abs and working on obliques. Great for flexibility training.",
+    "difficulty": "beginner",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "body weight",
+    "gifUrl": "https://v2.exercisedb.io/image/156be533a507",
+    "id": "0094",
+    "name": "body weight arms exercise 85",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A body weight exercise targeting the biceps and working on triceps. Great for flexibility training.",
+    "difficulty": "beginner",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "waist",
+    "equipment": "machine",
+    "gifUrl": "https://v2.exercisedb.io/image/e03a8ee811cf",
+    "id": "0095",
+    "name": "machine waist exercise 86",
+    "target": "abs",
+    "secondaryMuscles": [
+      "obliques"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A machine exercise targeting the abs and working on obliques. Great for plyometric training.",
+    "difficulty": "advanced",
+    "category": "plyometric"
+  },
+  {
+    "bodyPart": "upper legs",
+    "equipment": "body weight",
+    "gifUrl": "https://v2.exercisedb.io/image/dc6744ded03f",
+    "id": "0096",
+    "name": "body weight upper legs exercise 87",
+    "target": "glutes",
+    "secondaryMuscles": [
+      "quads",
+      "hamstrings"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A body weight exercise targeting the glutes and working on quads, hamstrings. Great for flexibility training.",
+    "difficulty": "intermediate",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "calves",
+    "equipment": "dumbbell",
+    "gifUrl": "https://v2.exercisedb.io/image/da7087691ce1",
+    "id": "0097",
+    "name": "dumbbell calves exercise 88",
+    "target": "calves",
+    "secondaryMuscles": [
+      "tibialis anterior"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A dumbbell exercise targeting the calves and working on tibialis anterior. Great for cardio training.",
+    "difficulty": "beginner",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "calves",
+    "equipment": "barbell",
+    "gifUrl": "https://v2.exercisedb.io/image/1d3cb54e11e3",
+    "id": "0098",
+    "name": "barbell calves exercise 89",
+    "target": "calves",
+    "secondaryMuscles": [
+      "tibialis anterior"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A barbell exercise targeting the calves and working on tibialis anterior. Great for flexibility training.",
+    "difficulty": "intermediate",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "waist",
+    "equipment": "kettlebell",
+    "gifUrl": "https://v2.exercisedb.io/image/26dfbe1eef5a",
+    "id": "0099",
+    "name": "kettlebell waist exercise 90",
+    "target": "abs",
+    "secondaryMuscles": [
+      "obliques"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A kettlebell exercise targeting the abs and working on obliques. Great for flexibility training.",
+    "difficulty": "intermediate",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "core",
+    "equipment": "resistance band",
+    "gifUrl": "https://v2.exercisedb.io/image/fba252aaf2e7",
+    "id": "0100",
+    "name": "resistance band core exercise 91",
+    "target": "core",
+    "secondaryMuscles": [
+      "obliques",
+      "lower back"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A resistance band exercise targeting the core and working on obliques, lower back. Great for balance training.",
+    "difficulty": "beginner",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "dumbbell",
+    "gifUrl": "https://v2.exercisedb.io/image/bf1651016816",
+    "id": "0101",
+    "name": "dumbbell arms exercise 92",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A dumbbell exercise targeting the biceps and working on triceps. Great for cardio training.",
+    "difficulty": "intermediate",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "chest",
+    "equipment": "barbell",
+    "gifUrl": "https://v2.exercisedb.io/image/edd26d59b449",
+    "id": "0102",
+    "name": "barbell chest exercise 93",
+    "target": "pectorals",
+    "secondaryMuscles": [
+      "triceps",
+      "anterior deltoids"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A barbell exercise targeting the pectorals and working on triceps, anterior deltoids. Great for strength training.",
+    "difficulty": "intermediate",
+    "category": "strength"
+  },
+  {
+    "bodyPart": "core",
+    "equipment": "dumbbell",
+    "gifUrl": "https://v2.exercisedb.io/image/b4aff6eb9ced",
+    "id": "0103",
+    "name": "dumbbell core exercise 94",
+    "target": "core",
+    "secondaryMuscles": [
+      "obliques",
+      "lower back"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A dumbbell exercise targeting the core and working on obliques, lower back. Great for flexibility training.",
+    "difficulty": "intermediate",
+    "category": "flexibility"
+  },
+  {
+    "bodyPart": "waist",
+    "equipment": "body weight",
+    "gifUrl": "https://v2.exercisedb.io/image/ef9e7be2b554",
+    "id": "0104",
+    "name": "body weight waist exercise 95",
+    "target": "abs",
+    "secondaryMuscles": [
+      "obliques"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A body weight exercise targeting the abs and working on obliques. Great for plyometric training.",
+    "difficulty": "intermediate",
+    "category": "plyometric"
+  },
+  {
+    "bodyPart": "back",
+    "equipment": "dumbbell",
+    "gifUrl": "https://v2.exercisedb.io/image/950c095c5c04",
+    "id": "0105",
+    "name": "dumbbell back exercise 96",
+    "target": "lats",
+    "secondaryMuscles": [
+      "rhomboids",
+      "traps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A dumbbell exercise targeting the lats and working on rhomboids, traps. Great for cardio training.",
+    "difficulty": "intermediate",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "shoulders",
+    "equipment": "cable",
+    "gifUrl": "https://v2.exercisedb.io/image/925da6e58b9b",
+    "id": "0106",
+    "name": "cable shoulders exercise 97",
+    "target": "delts",
+    "secondaryMuscles": [
+      "traps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A cable exercise targeting the delts and working on traps. Great for balance training.",
+    "difficulty": "beginner",
+    "category": "balance"
+  },
+  {
+    "bodyPart": "waist",
+    "equipment": "kettlebell",
+    "gifUrl": "https://v2.exercisedb.io/image/61bf224669b1",
+    "id": "0107",
+    "name": "kettlebell waist exercise 98",
+    "target": "abs",
+    "secondaryMuscles": [
+      "obliques"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A kettlebell exercise targeting the abs and working on obliques. Great for cardio training.",
+    "difficulty": "beginner",
+    "category": "cardio"
+  },
+  {
+    "bodyPart": "back",
+    "equipment": "machine",
+    "gifUrl": "https://v2.exercisedb.io/image/db68a9299c1b",
+    "id": "0108",
+    "name": "machine back exercise 99",
+    "target": "lats",
+    "secondaryMuscles": [
+      "rhomboids",
+      "traps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A machine exercise targeting the lats and working on rhomboids, traps. Great for plyometric training.",
+    "difficulty": "beginner",
+    "category": "plyometric"
+  },
+  {
+    "bodyPart": "arms",
+    "equipment": "dumbbell",
+    "gifUrl": "https://v2.exercisedb.io/image/49a55ee39404",
+    "id": "0109",
+    "name": "dumbbell arms exercise 100",
+    "target": "biceps",
+    "secondaryMuscles": [
+      "triceps"
+    ],
+    "instructions": [
+      "Stand with feet shoulder-width apart.",
+      "Engage your core and maintain good posture.",
+      "Perform the movement slowly and under control.",
+      "Return to the starting position.",
+      "Repeat for the desired number of reps."
+    ],
+    "description": "A dumbbell exercise targeting the biceps and working on triceps. Great for plyometric training.",
+    "difficulty": "advanced",
+    "category": "plyometric"
+  }
+]
