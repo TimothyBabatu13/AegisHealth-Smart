@@ -51,11 +51,11 @@ const FindSpecialist = () => {
                 {doctors.map((doctor) => (
                   <div
                     key={doctor.id}
-                    onClick={() => setSelectedDoctor(doctor.name)}
+                    onClick={() => setSelectedDoctor(`${doctor.firstName} ${doctor.lastName}`)}
                     className={`
                       p-3 rounded-lg border cursor-pointer transition-all duration-200
                       ${
-                        selectedDoctor === doctor.name
+                        selectedDoctor === `${doctor.firstName} ${doctor.lastName}`
                           ? "border-blue-500 bg-blue-50"
                           : "border-gray-200 hover:border-gray-300"
                       }
@@ -64,11 +64,11 @@ const FindSpecialist = () => {
                     <div className="flex items-center gap-3">
                       <img
                         src={doctor.img || "/placeholder.svg"}
-                        alt={doctor.name}
+                        alt={doctor.firstName}
                         className="w-10 h-10 rounded-full"
                       />
                       <div>
-                        <p className="font-medium text-[#344054]">{doctor.name}</p>
+                        <p className="font-medium text-[#344054]">{`${doctor.firstName} ${doctor.lastName}`}</p>
                         <p className="text-sm text-[#344054]/70">{doctor.specialization}</p>
                       </div>
                     </div>

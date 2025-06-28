@@ -6,7 +6,8 @@ import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
 interface CreateNewAccountType {
   data: User|any,
   code: number,
-  isDoctor?: boolean
+  isDoctor?: boolean,
+  onboarded?: boolean
 }
 
 type ValidateAuthType = {
@@ -24,12 +25,17 @@ export const CreateNewAccount = async (data : userDetailsType) : Promise<CreateN
       addDoc(collection(db, "users"), {
         email,
         isDoctor,
+        name: '',
+        onboarded: false
       });
       isDoctor ? (
         addDoc(collection(db, "specialist"), {
           email,
           name: '',
-          profileURL: ''
+          profileURL: '',
+          active: false,
+          isVerfied: false,
+          specialization: ''
         })
       ) : (
         addDoc(collection(db, "patient"), {
@@ -66,8 +72,8 @@ export const LoginToExistingAccount = async (
 
     const userDoc = querySnapshot.docs[0];
     const userData = userDoc.data();
-    
-    return {data: user, code: 201, isDoctor: userData.isDoctor ? userData.isDoctor as boolean : false};
+    const onboarded = userData.onboarded as boolean
+    return {data: user, code: 201, isDoctor: userData.isDoctor ? userData.isDoctor as boolean : false, onboarded};
   } catch (err: any) {
     console.error("Login error:", err.message);
     return { data: err.message, code: 500 };

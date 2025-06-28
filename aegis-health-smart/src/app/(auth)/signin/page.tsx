@@ -15,7 +15,7 @@ import { FormEvent, useState } from "react";
 
 const Page = () => {
     const { id, setId } = useAuthContextProvider();
-    const { setIsDoctor, setIsLoading: userSetIsLoading } = userStore();
+    const { setIsDoctor, setIsLoading: userSetIsLoading, setOnBoarded } = userStore();
     const route = useRouter();
     const [userDetails, setUserDetails] = useState<userDetailsType>({
         email: "",
@@ -38,7 +38,7 @@ const Page = () => {
         try {
             LoginToExistingAccount(userDetails)
                 .then((res) => {
-                    const { data, code, isDoctor } = res;
+                    const { data, code, isDoctor, onboarded } = res;
                     toast({
                         description: formatFirebaseError(
                             data?.uid ? "Login Succesful" : "An error occured"
@@ -47,6 +47,7 @@ const Page = () => {
                     });
                     setIsDoctor(isDoctor!);
                     userSetIsLoading(false);
+                    setOnBoarded(onboarded!)
                     setId(res.data?.uid);
                     if (res.data?.uid) {
                         route.push("/");

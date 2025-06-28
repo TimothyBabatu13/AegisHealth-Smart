@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import RedirectToMessage from "./RedirectToMessage"
+import { Verified } from "lucide-react"
 
 interface FindSpecialistCardType {
     img: string,
@@ -8,7 +9,8 @@ interface FindSpecialistCardType {
     specialization: string,
     active: boolean,
     className: string,
-    id: string
+    id: string,
+    isVerified: boolean
 }
 
 const Badge = ({ text, className } : {
@@ -22,22 +24,31 @@ const Badge = ({ text, className } : {
     )
 }
 
-const FindSpecialistCard = ({ img, name, specialization, active, className, id } : FindSpecialistCardType) => {
+const FindSpecialistCard = ({ img, name, specialization, active, className, id, isVerified } : FindSpecialistCardType) => {
   return (
     <div className={`h-[325px] min-w-[264px] w-[264px] rounded-[20px] border-[0.5px] border-[#E0E3EB] p-[15px] ${className}`}>
         <Image 
             height={156}
             width={234}
-            className="rounded-[20px] mb-[13px]"
+            className="rounded-[20px] h-[156px] mb-[13px]"
             src={img}
             alt={`${name} image`}
             priority
+            style={{
+                objectFit: 'cover',
+                objectPosition: 'top'
+            }}
         />
-        <h4 className="text-[#141414] text-sm font-semibold leading-[21px] mb-[5px]">{name}</h4>
+        <div className="flex items-center gap-1">
+            <h4 className="text-[#141414] text-sm font-semibold leading-[21px] mb-[5px]">{name}</h4>
+            {
+              isVerified && <Verified className="text-[#291ED7] size-4"/>   
+            }
+        </div>
         <h5 className="text-xs text-[#141414CC] font-medium leading-[21px] mb-[5px]">{specialization}</h5>
         {active ? <Badge className="bg-[#E5FFF3] text-[#006635]" text="Online"/> : <Badge className="bg-[#FDECE3] text-[#AD3307]" text="Offline" />}
         <div className="flex">
-            <Link className="text-sm text-[#344054] font-semibold mr-[10px] leading-[21px] py-2 px-4 border border-[#E0E3EB] rounded-[10px]" href={''}>View Schedule</Link>
+            <Link className="text-sm text-[#344054] font-semibold mr-[10px] leading-[21px] py-2 px-4 border border-[#E0E3EB] rounded-[10px]" href={`/schedule/${id}`}>View Schedule</Link>
             <RedirectToMessage 
                 href={`/chat/${id}`}
             />

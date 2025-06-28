@@ -11,17 +11,17 @@ const layout = ({
 }>) => {
     return (
         <LoaderLayer>
-        <ProtectedRoute>
-            <ScrollObserver>
-                <main className="min-[1220px]:flex gap-5 bg-[#FCFCFD]">
-                    <NavBar />
-                    <section className="flex-1">
-                        <Header />
-                        {children}
-                    </section>
-                </main>
-            </ScrollObserver>
-        </ProtectedRoute>
+            <ProtectedRoute>
+                <ScrollObserver>
+                    <main className="min-[1220px]:flex gap-5 bg-[#FCFCFD]">
+                        <NavBar />
+                        <section className="flex-1">
+                            <Header />
+                            {children}
+                        </section>
+                    </main>
+                </ScrollObserver>
+            </ProtectedRoute>
         </LoaderLayer>
     );
 };

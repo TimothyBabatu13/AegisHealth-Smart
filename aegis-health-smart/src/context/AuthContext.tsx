@@ -20,7 +20,7 @@ const AuthContext = ({
     const auth = getAuth(app);
     const [id, setId] = useState<string|null>('');
     const [user, setUser] = useState<User | null>(null);
-    const { setIsLoading, setIsDoctor } = userStore();
+    const { setIsLoading, setIsDoctor, setUser: setStoreUser, setOnBoarded } = userStore();
 
     useEffect(()=> {
       const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -28,6 +28,12 @@ const AuthContext = ({
             setUser(user)
             const uid = user.uid;
             setId(uid);
+            setStoreUser(user);
+            //comment these out
+            // setIsDoctor(false)
+            // setIsLoading(false);
+
+            //
             const fetchUserDetails = async() => {
               const usersRef = collection(db, "users");
               const q = query(usersRef, where("email", "==", user.email));
@@ -38,6 +44,7 @@ const AuthContext = ({
               setIsLoading(false);
               let isDoctor: boolean;
               userData.isDoctor ? isDoctor = userData.isDoctor : isDoctor =false
+              setOnBoarded(userData.onboarded as boolean)
               setIsDoctor(isDoctor)
             }
             fetchUserDetails();

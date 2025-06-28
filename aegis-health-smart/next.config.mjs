@@ -8,6 +8,9 @@ const nextConfig = {
       },
       {
         hostname: 'tailwindui.com'
+      },
+      {
+        hostname: 'res.cloudinary.com'
       }
     ],
     // domains: []

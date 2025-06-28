@@ -8,14 +8,16 @@ import UpcomingAppointment from "./components/UpcomingAppointment";
 import UserName from "./components/UserName";
 import { userStore } from "@/stores/userStore";
 import DoctorDashboard from "@/doctor-component/doctor-dashboard";
+import OnBoardingFlow from "./components/on-boarding-flow";
 
 export default function Home() {
 
-  const { isDoctor } = userStore();
+  const { isDoctor, onboarded } = userStore();
 
   return (
     <>
     {
+      !onboarded ? <OnBoardingFlow /> :
       !isDoctor ? (
         <section className="min-[1220px]:flex">
         <PageWrapper>

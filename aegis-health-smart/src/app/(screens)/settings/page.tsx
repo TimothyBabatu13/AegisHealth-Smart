@@ -2,10 +2,9 @@
 
 import type React from "react"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import {
   User,
-  Camera,
   Save,
   Lock,
   Bell,
@@ -22,34 +21,88 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Separator } from "@/components/ui/separator"
 import { Switch } from "@/components/ui/switch"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
+import ProfilePictureEdit from "@/components/settings/profile-picture-edit"
+import { collection, doc, getDocs, onSnapshot, query, setDoc, where } from "firebase/firestore"
+import { app, db } from "@/config/firebaseConfig"
+import { userStore } from "@/stores/userStore"
+import { getAuth, updateProfile } from "firebase/auth"
 
-export default function PatientSettings() {
-  const [personalData, setPersonalData] = useState({
-    firstName: "John",
-    lastName: "Smith",
-    email: "john.smith@email.com",
-    phone: "+1 (555) 987-6543",
-    dateOfBirth: "1978-05-15",
-    gender: "male",
-    address: "456 Oak Street, City, State 12345",
-    emergencyContactName: "Jane Smith",
-    emergencyContactPhone: "+1 (555) 123-4567",
-    emergencyContactRelation: "spouse",
-  })
 
-  const [medicalData, setMedicalData] = useState({
-    bloodType: "O+",
-    allergies: "Penicillin, Shellfish",
-    currentMedications: "Lisinopril 10mg daily, Metformin 500mg twice daily",
-    medicalConditions: "Hypertension, Type 2 Diabetes",
-    primaryPhysician: "Dr. Sarah Johnson",
-    preferredPharmacy: "City Pharmacy - 123 Main St",
-  })
+interface DataType {
+  address?: string,
+  allergies: string,
+  bloodType: string,
+  currentMedications: string,
+  dateOfBirth: string,
+  email: string,
+  emergencyContactName: string,
+  emergencyContactPhone: string,
+  emergencyContactRelation: string,
+  firstName: string,
+  gender: string,
+  id: string,
+  insuranceProvider: string,
+  lastName: string,
+  liveURL: string,
+  medicalConditions: string,
+  name: string,
+  phone: string,
+  policyNumber: string,
+  primaryPhysician: string
+  profileURL: string
+}
+
+const fetchUserProfile = async ({ email, callback } : {
+  email: string,
+  callback: (data: DataType | null) => void 
+}) => {
+  const q = query(collection(db, "patient"), where("email", "==", email));
+
+  const unsubscribe = onSnapshot(
+    q,
+    (querySnapshot) => {
+      if (querySnapshot.empty) {
+        callback(null);
+      } else {
+        const doc = querySnapshot.docs[0];
+        const data = {
+          ...doc.data(),
+          id: doc.id
+        }
+        callback(data as DataType);
+      }
+    },
+    (error) => {
+      console.error("Error listening to user profile:", error);
+      callback(null);
+    }
+  )
+  return unsubscribe; 
+}
+
+const PatientSettings = () => {
+  const { user } = userStore()
+  const auth = getAuth(app);
+
+  const [personalData, setPersonalData] = useState<DataType | null>(null)
+  const [loading, setIsLoading] = useState(false);
+  useEffect(()=>{
+    const fetchData = async () => {
+      await fetchUserProfile({
+        email:user?.email!,
+        callback: (data) => {
+          setPersonalData(data);
+        }
+      },
+    )
+            
+    }
+    fetchData()
+  }, [])
 
   const [insuranceData, setInsuranceData] = useState({
     provider: "Blue Cross Blue Shield",
@@ -87,21 +140,13 @@ export default function PatientSettings() {
   const [showNewPassword, setShowNewPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
-  const fileInputRef = useRef<HTMLInputElement>(null)
-
-  const handlePersonalUpdate = (field: string, value: string) => {
+  const handlePersonalUpdate = (field: keyof DataType, value: string) => {
+    if (!personalData) return;
     setPersonalData((prev) => ({
-      ...prev,
+      ...prev!,
       [field]: value,
-    }))
-  }
-
-  const handleMedicalUpdate = (field: string, value: string) => {
-    setMedicalData((prev) => ({
-      ...prev,
-      [field]: value,
-    }))
-  }
+    }) as DataType);
+  };
 
   const handleInsuranceUpdate = (field: string, value: string) => {
     setInsuranceData((prev) => ({
@@ -131,22 +176,22 @@ export default function PatientSettings() {
     }))
   }
 
-  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]
-    if (file) {
-      console.log("Uploading file:", file.name)
-      alert("Profile picture updated successfully!")
+  const handleSavePersonal = async () => {
+    if(!personalData) return
+    setIsLoading(true)
+    const docRef = doc(db, "patient", personalData?.id!);
+    try {
+      await setDoc(docRef, personalData, { merge: true });
+      await updateProfile(auth.currentUser!, {
+        displayName: `${personalData.firstName} ${personalData.lastName}`
+      })
+      setIsLoading(false)
+    } catch (error) {
+      console.log(error)
     }
-  }
-
-  const handleSavePersonal = () => {
-    console.log("Saving personal data:", personalData)
-    alert("Personal information updated successfully!")
-  }
-
-  const handleSaveMedical = () => {
-    console.log("Saving medical data:", medicalData)
-    alert("Medical information updated successfully!")
+    finally{
+      setIsLoading(false)
+    }
   }
 
   const handleSaveInsurance = () => {
@@ -197,44 +242,8 @@ export default function PatientSettings() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-              {/* Profile Picture */}
-              <div className="flex items-center gap-6">
-                <div className="relative">
-                  <Avatar className="h-24 w-24">
-                    <AvatarImage src="/placeholder.svg?height=96&width=96" alt="Profile" />
-                    <AvatarFallback className="bg-blue-100 text-[#344054] text-xl">
-                      {personalData.firstName[0]}
-                      {personalData.lastName[0]}
-                    </AvatarFallback>
-                  </Avatar>
-                  <Button
-                    size="sm"
-                    className="absolute -bottom-2 -right-2 h-8 w-8 rounded-full bg-blue-500 hover:bg-blue-600 text-white p-0"
-                    onClick={() => fileInputRef.current?.click()}
-                  >
-                    <Camera className="h-4 w-4" />
-                  </Button>
-                  <input
-                    ref={fileInputRef}
-                    type="file"
-                    accept="image/*"
-                    onChange={handleImageUpload}
-                    className="hidden"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-medium text-[#344054]">Profile Picture</h3>
-                  <p className="text-sm text-[#344054]/70">Upload a clear photo of yourself</p>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="mt-2 text-[#344054] border-gray-200"
-                    onClick={() => fileInputRef.current?.click()}
-                  >
-                    Change Photo
-                  </Button>
-                </div>
-              </div>
+              
+              <ProfilePictureEdit img={personalData?.liveURL!}/>
 
               <Separator />
 
@@ -246,7 +255,7 @@ export default function PatientSettings() {
                   </Label>
                   <Input
                     id="firstName"
-                    value={personalData.firstName}
+                    value={personalData?.firstName}
                     onChange={(e) => handlePersonalUpdate("firstName", e.target.value)}
                     className="text-[#344054] border-gray-200"
                   />
@@ -257,7 +266,7 @@ export default function PatientSettings() {
                   </Label>
                   <Input
                     id="lastName"
-                    value={personalData.lastName}
+                    value={personalData?.lastName}
                     onChange={(e) => handlePersonalUpdate("lastName", e.target.value)}
                     className="text-[#344054] border-gray-200"
                   />
@@ -272,8 +281,8 @@ export default function PatientSettings() {
                   <Input
                     id="email"
                     type="email"
-                    value={personalData.email}
-                    onChange={(e) => handlePersonalUpdate("email", e.target.value)}
+                    value={personalData?.email}
+                    readOnly
                     className="text-[#344054] border-gray-200"
                   />
                 </div>
@@ -283,7 +292,7 @@ export default function PatientSettings() {
                   </Label>
                   <Input
                     id="phone"
-                    value={personalData.phone}
+                    value={personalData?.phone}
                     onChange={(e) => handlePersonalUpdate("phone", e.target.value)}
                     className="text-[#344054] border-gray-200"
                   />
@@ -298,7 +307,7 @@ export default function PatientSettings() {
                   <Input
                     id="dateOfBirth"
                     type="date"
-                    value={personalData.dateOfBirth}
+                    value={personalData?.dateOfBirth}
                     onChange={(e) => handlePersonalUpdate("dateOfBirth", e.target.value)}
                     className="text-[#344054] border-gray-200"
                   />
@@ -307,7 +316,7 @@ export default function PatientSettings() {
                   <Label htmlFor="gender" className="text-[#344054]">
                     Gender
                   </Label>
-                  <Select value={personalData.gender} onValueChange={(value) => handlePersonalUpdate("gender", value)}>
+                  <Select value={personalData?.gender} onValueChange={(value) => handlePersonalUpdate("gender", value)}>
                     <SelectTrigger className="text-[#344054] border-gray-200">
                       <SelectValue />
                     </SelectTrigger>
@@ -327,7 +336,7 @@ export default function PatientSettings() {
                 </Label>
                 <Input
                   id="address"
-                  value={personalData.address}
+                  value={personalData?.address}
                   onChange={(e) => handlePersonalUpdate("address", e.target.value)}
                   className="text-[#344054] border-gray-200"
                 />
@@ -348,7 +357,7 @@ export default function PatientSettings() {
                     </Label>
                     <Input
                       id="emergencyContactName"
-                      value={personalData.emergencyContactName}
+                      value={personalData?.emergencyContactName}
                       onChange={(e) => handlePersonalUpdate("emergencyContactName", e.target.value)}
                       className="text-[#344054] border-gray-200"
                     />
@@ -359,7 +368,7 @@ export default function PatientSettings() {
                     </Label>
                     <Input
                       id="emergencyContactPhone"
-                      value={personalData.emergencyContactPhone}
+                      value={personalData?.emergencyContactPhone}
                       onChange={(e) => handlePersonalUpdate("emergencyContactPhone", e.target.value)}
                       className="text-[#344054] border-gray-200"
                     />
@@ -370,7 +379,7 @@ export default function PatientSettings() {
                     Relationship
                   </Label>
                   <Select
-                    value={personalData.emergencyContactRelation}
+                    value={personalData?.emergencyContactRelation}
                     onValueChange={(value) => handlePersonalUpdate("emergencyContactRelation", value)}
                   >
                     <SelectTrigger className="text-[#344054] border-gray-200">
@@ -388,9 +397,15 @@ export default function PatientSettings() {
                 </div>
               </div>
 
-              <Button onClick={handleSavePersonal} className="bg-blue-500 hover:bg-blue-600 text-white">
+              <Button 
+                onClick={handleSavePersonal} 
+                className="bg-blue-500 hover:bg-blue-600 text-white"
+                disabled={loading}
+              >
                 <Save className="h-4 w-4 mr-2" />
-                Save Personal Information
+                {
+                  loading ? 'Saving...' : 'Save Personal Information'
+                }
               </Button>
             </CardContent>
           </Card>
@@ -413,8 +428,8 @@ export default function PatientSettings() {
                     Blood Type
                   </Label>
                   <Select
-                    value={medicalData.bloodType}
-                    onValueChange={(value) => handleMedicalUpdate("bloodType", value)}
+                    value={personalData?.bloodType}
+                    onValueChange={(value) => handlePersonalUpdate("bloodType", value)}
                   >
                     <SelectTrigger className="text-[#344054] border-gray-200">
                       <SelectValue />
@@ -437,8 +452,8 @@ export default function PatientSettings() {
                   </Label>
                   <Input
                     id="primaryPhysician"
-                    value={medicalData.primaryPhysician}
-                    onChange={(e) => handleMedicalUpdate("primaryPhysician", e.target.value)}
+                    value={personalData?.primaryPhysician}
+                    onChange={(e) => handlePersonalUpdate("primaryPhysician", e.target.value)}
                     className="text-[#344054] border-gray-200"
                   />
                 </div>
@@ -451,8 +466,8 @@ export default function PatientSettings() {
                 </Label>
                 <Textarea
                   id="allergies"
-                  value={medicalData.allergies}
-                  onChange={(e) => handleMedicalUpdate("allergies", e.target.value)}
+                  value={personalData?.allergies}
+                  onChange={(e) => handlePersonalUpdate("allergies", e.target.value)}
                   className="text-[#344054] border-gray-200"
                   placeholder="List any known allergies..."
                   rows={2}
@@ -465,8 +480,8 @@ export default function PatientSettings() {
                 </Label>
                 <Textarea
                   id="currentMedications"
-                  value={medicalData.currentMedications}
-                  onChange={(e) => handleMedicalUpdate("currentMedications", e.target.value)}
+                  value={personalData?.currentMedications}
+                  onChange={(e) => handlePersonalUpdate("currentMedications", e.target.value)}
                   className="text-[#344054] border-gray-200"
                   placeholder="List current medications and dosages..."
                   rows={3}
@@ -479,8 +494,8 @@ export default function PatientSettings() {
                 </Label>
                 <Textarea
                   id="medicalConditions"
-                  value={medicalData.medicalConditions}
-                  onChange={(e) => handleMedicalUpdate("medicalConditions", e.target.value)}
+                  value={personalData?.medicalConditions}
+                  onChange={(e) => handlePersonalUpdate("medicalConditions", e.target.value)}
                   className="text-[#344054] border-gray-200"
                   placeholder="List any chronic conditions or ongoing health issues..."
                   rows={2}
@@ -488,7 +503,7 @@ export default function PatientSettings() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="preferredPharmacy" className="text-[#344054]">
+                {/* <Label htmlFor="preferredPharmacy" className="text-[#344054]">
                   Preferred Pharmacy
                 </Label>
                 <Input
@@ -496,10 +511,10 @@ export default function PatientSettings() {
                   value={medicalData.preferredPharmacy}
                   onChange={(e) => handleMedicalUpdate("preferredPharmacy", e.target.value)}
                   className="text-[#344054] border-gray-200"
-                />
+                /> */}
               </div>
 
-              <Button onClick={handleSaveMedical} className="bg-blue-500 hover:bg-blue-600 text-white">
+              <Button onClick={handleSavePersonal} className="bg-blue-500 hover:bg-blue-600 text-white">
                 <Save className="h-4 w-4 mr-2" />
                 Save Medical Information
               </Button>
@@ -885,3 +900,5 @@ export default function PatientSettings() {
     </div>
   )
 }
+
+export default PatientSettings

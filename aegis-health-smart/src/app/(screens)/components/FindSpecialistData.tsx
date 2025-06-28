@@ -10,6 +10,7 @@ const FindSpecialistData = () => {
   const [specialist, setSpecialist] = useState<FindSpecialistCardType | any>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
+  console.log(specialist)
   // console.log(isLoading)
   useEffect( ()=>{
     setIsLoading(true);
@@ -32,13 +33,14 @@ const FindSpecialistData = () => {
         isLoading ? <FindSpeciallistSkeleton /> :
         specialist.map((doctor:FindSpecialistCardType, index: number) => (
           <FindSpecialistCard 
-            img={doctor.img}
-            name={doctor.name}
+            img={doctor.liveURL}
+            name={`${doctor.firstName} ${doctor.lastName}`}
             specialization={doctor.specialization}
             active={doctor.active}
             id={doctor.id}
             key={index}
             className={`${index === specialist.length - 1 ? "" : "mr-5"}`}
+            isVerified={doctor.isVerfied}
           />
         ))
       }

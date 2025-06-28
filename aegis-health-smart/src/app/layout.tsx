@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 const inter = Inter({ subsets: ["latin"] });
 
 const title = "Aegis Health Smart";
-const description = "A Healthcare application that leverages AI to provide personalized health insights, and diagnostics";
+const description = "A Healthcare application";
 
 export const metadata: Metadata = {
   title,
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title,
     description,
      url: "https://www.aegis-health-smart.vercel.app",
-     siteName: "NaijaRugged",
+     siteName: "AegisHealth",
       images: [
         {
           url: '',

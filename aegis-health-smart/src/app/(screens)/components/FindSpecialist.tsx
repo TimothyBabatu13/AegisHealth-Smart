@@ -8,11 +8,20 @@ import FindSpecialistData from "./FindSpecialistData";
 import Loader from "@/components/Loader";
 
 export interface FindSpecialistCardType {
+    id: string;
+    email: string;
+    firstName: string;
+    lastName: string;
+    phone: string;
+    hospital: string;
+    licenseNumber: string;
+    profileURL: string;
+    liveURL: string;
+    isVerfied: boolean;
     img: string;
-    name: string;
+    // name: string;
     specialization: string;
     active: boolean;
-    id: string
 }
 
 const FindSpecialist = () => {
