@@ -6,7 +6,9 @@ interface useScheduleStoreType {
     selectedDoctor: string,
     setSelectedDate: (Date: Date) => void,
     setSelectedTime: (value: string) => void,
-    setSelectedDoctor: (value: string) => void
+    setSelectedDoctor: (value: string) => void,
+    doctorEmail: string,
+    setDoctorEmail: (value: string) => void
 }
 
 export const useScheduleStore = create<useScheduleStoreType>((set) => ({
@@ -21,5 +23,9 @@ export const useScheduleStore = create<useScheduleStoreType>((set) => ({
   },
   setSelectedTime: (value) => {
     set({selectedTime: value})
+  },
+  doctorEmail: '',
+  setDoctorEmail: (value) =>{
+    set({doctorEmail: value})
   }
 }))

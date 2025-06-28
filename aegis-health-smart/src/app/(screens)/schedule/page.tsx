@@ -2,7 +2,7 @@ import FindSpecialist from "./components/FindSpecialist";
 import Calendar from "./components/calender";
 import Form from "./components/Form";
 
-export default function PatientSchedule() {
+const PatientSchedule = () => {
   return (
     <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-8 max-w-7xl">
@@ -23,3 +23,4 @@ export default function PatientSchedule() {
 }
 
 
+export default PatientSchedule

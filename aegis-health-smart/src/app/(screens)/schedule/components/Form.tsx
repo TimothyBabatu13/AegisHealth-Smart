@@ -6,19 +6,79 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
+import { db } from "@/config/firebaseConfig";
+import { userStore } from "@/stores/userStore";
 import { useScheduleStore } from "@/stores/useScheduleStore";
 import { appointmentTypes } from "@/utils/hardcoded-data"
+import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
 import { CalendarDays, User } from "lucide-react"
+import { useEffect, useState } from "react";
+import { type Patient } from "../[id]/page";
+
+const fetchUserDetails = async ({ email } : {
+  email: string
+}) => {
+  try {
+    const q = query(
+      collection(db, "patient"),
+      where("email", "==", email)
+    );
+
+    const querySnapshot = await getDocs(q);
+
+    const patients = querySnapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+
+    return patients[0] as Patient
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+
 
 const Form = () => {
-
-    const { selectedDate, selectedTime, selectedDoctor } = useScheduleStore();
+    const { user } = userStore();
+    const [isLoading, setIsLoading] = useState(false);
+    const { selectedDate, selectedTime, selectedDoctor, doctorEmail } = useScheduleStore();
+    const [appointmentType, setAppointMentType] = useState(appointmentTypes[0]);
+    const [patientData, setPatientData] = useState<Patient>()
     
-    const handleBookAppointment = () => {
+    useEffect(()=>{
+      const fetchData = async () => {
+        const response = await fetchUserDetails({email: user?.email!});
+        setPatientData(response);
+      }
+      fetchData();
+    }, [])
+
+    const handleBookAppointment = async () => {
+        if(!doctorEmail) return
         if (selectedDate && selectedTime && selectedDoctor) {
-            alert(
-            `Appointment booked successfully!\nDate: ${selectedDate.toLocaleDateString()}\nTime: ${selectedTime}\nDoctor: ${selectedDoctor}`,
-          )
+          setIsLoading(true)
+          const data = {
+            selectedDate,
+            selectedDoctor,
+            selectedTime,
+            patient: user?.email!,
+            specialist: doctorEmail,
+            appointmentType
+          }
+          
+          try {
+            const docRef = await addDoc(collection(db, 'appointment'), {
+              ...data,
+                });
+                setIsLoading(false)
+              } catch (error) {
+                console.log(error);
+                setIsLoading(false)
+              }
+              finally{
+                setIsLoading(false)
+              }
         }
       }
 
@@ -40,6 +100,8 @@ const Form = () => {
                     id="patient-name"
                     placeholder="Enter patient name"
                     className="text-[#344054] border-gray-200"
+                    readOnly
+                    value={`${patientData?.firstName} ${patientData?.lastName}`}
                   />
                 </div>
 
@@ -47,14 +109,22 @@ const Form = () => {
                   <Label htmlFor="phone" className="text-[#344054]">
                     Phone Number
                   </Label>
-                  <Input id="phone" placeholder="Enter phone number" className="text-[#344054] border-gray-200" />
+                  <Input 
+                    id="phone" 
+                    placeholder="Enter phone number" 
+                    className="text-[#344054] border-gray-200"
+                    readOnly
+                    value={patientData?.phone} 
+                  />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="appointment-type" className="text-[#344054]">
                     Appointment Type
                   </Label>
-                  <Select>
+                  <Select onValueChange={(value) => {
+                    setAppointMentType(value);
+                  }}>
                     <SelectTrigger className="text-[#344054] border-gray-200">
                       <SelectValue placeholder="Select appointment type" />
                     </SelectTrigger>
@@ -108,9 +178,12 @@ const Form = () => {
 
                   <Button
                     onClick={handleBookAppointment}
+                    disabled={isLoading}
                     className="w-full mt-4 bg-blue-500 hover:bg-blue-600 text-white"
                   >
-                    Book Appointment
+                    {
+                      isLoading ? 'Booking...' : 'Book Appointment'
+                    }
                   </Button>
                 </CardContent>
               </Card>

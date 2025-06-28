@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge"
 import { addDoc, collection, doc, getDoc, getDocs, query, where } from "firebase/firestore";
 import { db } from "@/config/firebaseConfig";
 import { userStore } from "@/stores/userStore";
+import { appointmentTypes } from "@/utils/hardcoded-data";
 
 const timeSlots = [
   "09:00 AM",
@@ -43,7 +44,7 @@ type Doctor = {
   isVerfied: boolean;
 };
 
-type Patient = {
+export type Patient = {
   id: string;
   firstName: string;
   lastName: string;
@@ -98,18 +99,10 @@ const fetchUserDetails = async ({ email } : {
 
     return patients[0] as Patient
   } catch (error) {
-    console.error("Error fetching patient:", error);
+    console.log(error);
     throw error;
   }
 }
-
-const appointmentTypes = [
-  "General Consultation",
-  "Follow-up Visit",
-  "Routine Checkup",
-  "Specialist Consultation",
-  "Emergency Consultation",
-]
 
 const PatientSchedule = () => {
   const { user } = userStore()

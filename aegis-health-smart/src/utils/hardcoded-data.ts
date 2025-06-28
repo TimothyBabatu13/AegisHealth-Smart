@@ -13,14 +13,6 @@ export const timeSlots = [
   "04:30 PM",
 ]
 
-export const appointmentTypes = [
-  "General Consultation",
-  "Follow-up Visit",
-  "Routine Checkup",
-  "Specialist Consultation",
-  "Emergency Consultation",
-]
-
 
 export interface Message {
   id: string
@@ -42,6 +34,14 @@ export interface ChatUser {
   isOnline: boolean
   lastSeen?: Date
 }
+
+export const appointmentTypes = [
+  "General Consultation",
+  "Follow-up Visit",
+  "Routine Checkup",
+  "Specialist Consultation",
+  "Emergency Consultation",
+]
 
 export const initialMessages: Message[] = [
   {

@@ -10,10 +10,9 @@ import { db } from "@/config/firebaseConfig";
 
 const fetchListOfSpecialists = async () => {
   
-
   const specialistsRef = collection(db, "specialist");
   const querySnapshot = await getDocs(specialistsRef);
-  console.log('gets here')
+  
   if(querySnapshot.empty){
     console.log('ends here')
     return [];
@@ -29,8 +28,9 @@ const fetchListOfSpecialists = async () => {
 
 const FindSpecialist = () => {
 
-    const { selectedDoctor, setSelectedDoctor } = useScheduleStore();
+    const { selectedDoctor, setSelectedDoctor, setDoctorEmail } = useScheduleStore();
     const [doctors, setDoctors] = useState<Array<FindSpecialistCardType>>([]); 
+    
     useEffect(()=> {
         const fetchSpecialist = async () => {
           const res  = await fetchListOfSpecialists();
@@ -39,6 +39,10 @@ const FindSpecialist = () => {
         fetchSpecialist();
       } , [])
 
+      const handleSelectSpecialist = (doctor: FindSpecialistCardType) => {
+        setSelectedDoctor(`${doctor.firstName} ${doctor.lastName}`);
+        setDoctorEmail(doctor.email);
+      }
   return (
     <Card className="border-gray-200">
               <CardHeader>
@@ -51,7 +55,9 @@ const FindSpecialist = () => {
                 {doctors.map((doctor) => (
                   <div
                     key={doctor.id}
-                    onClick={() => setSelectedDoctor(`${doctor.firstName} ${doctor.lastName}`)}
+                    onClick={()=>{
+                      handleSelectSpecialist(doctor)
+                    }}
                     className={`
                       p-3 rounded-lg border cursor-pointer transition-all duration-200
                       ${
@@ -63,7 +69,7 @@ const FindSpecialist = () => {
                   >
                     <div className="flex items-center gap-3">
                       <img
-                        src={doctor.img || "/placeholder.svg"}
+                        src={doctor.liveURL}
                         alt={doctor.firstName}
                         className="w-10 h-10 rounded-full"
                       />
