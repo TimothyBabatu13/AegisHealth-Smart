@@ -2,7 +2,7 @@ import Image from "next/image"
 export interface ExerciseCardType {
     bodyPart: string,
     equipment: string,
-    gifUrl: string,
+    gifUrl: any,
     id: string,
     name: string,
     target: string,

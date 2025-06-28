@@ -3,6 +3,7 @@ export const dynamic = 'force-dynamic'
 import React from "react";
 import ActivityCard from "../../components/ActivityCard";
 import ScrollComponent from "../../components/ScrollComponent";
+import image from '@/json/gif.gif'
 interface TodayPickProps {
     img: string;
     activityName: string;
@@ -12,19 +13,11 @@ interface TodayPickProps {
 
 
 const fetchData = async () => {
-    const url = 'https://exercisedb.p.rapidapi.com/exercises?limit=10&offset=0';
-const options = {
-	method: 'GET',
-	headers: {
-		'x-rapidapi-key': '44e1d38ee4msh7f5e486e5ae78d1p170cacjsn4a13faf3bb2b',
-		'x-rapidapi-host': 'exercisedb.p.rapidapi.com'
-	},
-};
+    const url = 'https://aegis-health-smart.vercel.app/api/exercise';
 
 try {
-	const response = await fetch(url, {cache: 'no-store', ...options},);
+	const response = await fetch(url, {cache: 'no-store'},);
 	const result = await response.json();
-	// console.log(result);
     return result;
 } catch (error) {
 	console.error(error);
@@ -50,7 +43,7 @@ async function TodayPick() {
                             activityName={gymDatum.name}
                             completedSessions={1}
                             totalSessions={20}
-                            img={gymDatum.gifUrl}
+                            img={image}
                         />
                     ))
                 }

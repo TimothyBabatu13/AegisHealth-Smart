@@ -5,11 +5,11 @@ import { Button } from "./ScrollButtons";
 import LazyLoadImage from "../activity/components/LazyLoadImage";
 
 interface ActivityCardProps {
-    img: string;
+    img: any;
     activityName: string;
     completedSessions: number;
     totalSessions: number;
-    id: string
+    id: any
 }
 
 const Badge = ({ text, className }: { text: string; className: string }) => {

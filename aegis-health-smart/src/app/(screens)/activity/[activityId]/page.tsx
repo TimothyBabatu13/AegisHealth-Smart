@@ -3,7 +3,7 @@ import SmallPageWrapper from "@/components/SmallPageWrapper";
 import Vitals from "../components/Vitals";
 import SupplementsRecommendations from "../components/SupplementsRecommendations";
 import ExerciseCard from "./ExerciseCard";
-
+import image from '@/json/gif.gif'
 type paramsType = {
     params: {
         activityId: string
@@ -11,19 +11,15 @@ type paramsType = {
 }
 
 const fetchData = async (url : string) => {
-    const baseURL = `https://exercisedb.p.rapidapi.com/exercises/exercise/${url}`;
-    const options = {
-        method: 'GET',
-        headers: {
-            'x-rapidapi-key': '44e1d38ee4msh7f5e486e5ae78d1p170cacjsn4a13faf3bb2b',
-            'x-rapidapi-host': 'exercisedb.p.rapidapi.com'
-        }
-    };
+    const baseURL = 'https://aegis-health-smart.vercel.app/api/exercise'
 
     try {
-        const response = await fetch(baseURL, options);
+        const response = await fetch(baseURL, {
+            method: 'POST',
+            body: JSON.stringify(url)
+        });
         const result = await response.json();
-        console.log(result);
+
         return result
     } catch (error) {
         console.error(error);
@@ -36,7 +32,7 @@ const page = async ({ params : {
     console.log(activityId)
 
     const data = await fetchData(activityId)
-    console.log(data)
+    
   return (
     <section className="min-[1220px]:flex">
             <PageWrapper>
@@ -51,7 +47,7 @@ const page = async ({ params : {
                 <ExerciseCard 
                     bodyPart={data?.bodyPart}
                     equipment={data?.equipment}
-                    gifUrl={data?.gifUrl}
+                    gifUrl={image}
                     id={data?.id}
                     name={data?.name}
                     target={data?.target}

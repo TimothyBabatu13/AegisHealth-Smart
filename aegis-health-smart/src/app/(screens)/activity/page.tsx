@@ -1,7 +1,7 @@
 import PageWrapper from "@/components/PageWrapper";
 import TodayPick from "./components/TodayPick";
 import SmallPageWrapper from "@/components/SmallPageWrapper";
-import Vitals from "./components/Vitals";
+// import Vitals from "./components/Vitals";
 import SupplementsRecommendations from "./components/SupplementsRecommendations";
 import { Suspense } from "react";
 
