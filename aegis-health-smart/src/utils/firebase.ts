@@ -22,12 +22,14 @@ export const CreateNewAccount = async (data : userDetailsType) : Promise<CreateN
     return createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
+      console.log('creating account');
       addDoc(collection(db, "users"), {
         email,
         isDoctor,
         name: '',
         onboarded: false
       });
+      console.log('creating...')
       isDoctor ? (
         addDoc(collection(db, "specialist"), {
           email,
@@ -65,7 +67,7 @@ export const LoginToExistingAccount = async (
 
     const userCredentials = await signInWithEmailAndPassword(auth, email, password);
     const user = userCredentials.user;
-
+    console.log(user)
     const usersRef = collection(db, "users");
     const q = query(usersRef, where("email", "==", email));
     const querySnapshot = await getDocs(q);
