@@ -20,10 +20,10 @@ export const CreateNewAccount = async (data : userDetailsType) : Promise<CreateN
     const auth = getAuth(app);
     const { email, password,isDoctor } = data;
     return createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
+    .then(async (userCredential) => {
       const user = userCredential.user;
       console.log('creating account');
-      addDoc(collection(db, "users"), {
+      await addDoc(collection(db, "users"), {
         email,
         isDoctor,
         name: '',
@@ -31,7 +31,7 @@ export const CreateNewAccount = async (data : userDetailsType) : Promise<CreateN
       });
       console.log('creating...')
       isDoctor ? (
-        addDoc(collection(db, "specialist"), {
+        await addDoc(collection(db, "specialist"), {
           email,
           name: '',
           profileURL: '',
@@ -40,7 +40,7 @@ export const CreateNewAccount = async (data : userDetailsType) : Promise<CreateN
           specialization: ''
         })
       ) : (
-        addDoc(collection(db, "patient"), {
+        await addDoc(collection(db, "patient"), {
           email,
           name: '',
           profileURL: ''
