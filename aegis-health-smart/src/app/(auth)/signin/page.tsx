@@ -39,6 +39,7 @@ const Page = () => {
             LoginToExistingAccount(userDetails)
                 .then((res) => {
                     const { data, code, isDoctor, onboarded } = res;
+                    console.log(data)
                     toast({
                         description: formatFirebaseError(
                             data?.uid ? "Login Succesful" : "An error occured"
