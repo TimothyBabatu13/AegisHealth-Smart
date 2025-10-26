@@ -1,6 +1,6 @@
 import { userStore } from "@/stores/userStore"
 import { useState, useRef, Dispatch, SetStateAction, useEffect } from "react"
-import { Camera, User, Stethoscope, ArrowRight, Check, Upload, Mail, Phone, Calendar, Heart, Shield } from "lucide-react"
+import { Camera, User, Stethoscope, ArrowRight, Check, Upload, Mail, Phone, Calendar, Heart, Shield, LoaderIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -87,8 +87,9 @@ const ProgressBar = ({ currentStep, totalSteps } : {
   )
 }
 
-const RenderAvatar = ({ getLiveURL } : {
-  getLiveURL: (value: string) => any
+const RenderAvatar = ({ getLiveURL, localPreview } : {
+  getLiveURL: (value: string) => any,
+  localPreview: Dispatch<SetStateAction<string>>
 }) => {
   const [profileImage, setProfileImage] = useState<string>("");
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -100,6 +101,7 @@ const RenderAvatar = ({ getLiveURL } : {
       file:file,
       localPreview: (url) => {
         setProfileImage(url)
+        localPreview(url)
       },
       liveURLPreview: (url) => {
         getLiveURL(url)
@@ -136,6 +138,7 @@ const RenderAvatar = ({ getLiveURL } : {
       <div className="text-center">
         <p className="text-sm text-[#344054] font-medium">Upload Profile Picture</p>
         <p className="text-xs text-[#344054]/70">Recommended: 400x400px, max 5MB</p>
+        <p className="text-xs font-extrabold text-red-500">This is a required field</p>
       </div>
     </div>
   )
@@ -170,12 +173,13 @@ const Footer = ({isDoctor}:{isDoctor: boolean}) => {
   )
 }
 
-const NavigationButtons = ({ currentStep, totalSteps, setSteps, isStepValid, handleComplete } : {
+const NavigationButtons = ({ currentStep, totalSteps, setSteps, isStepValid, handleComplete, isLoding } : {
   currentStep: number,
   totalSteps: number,
   setSteps: Dispatch<SetStateAction<number>>,
   isStepValid: boolean,
-  handleComplete: () => void
+  handleComplete: () => void,
+  isLoding?: boolean
 }) => {
 
   const handlePrevious = () => {
@@ -222,8 +226,14 @@ const NavigationButtons = ({ currentStep, totalSteps, setSteps, isStepValid, han
                 disabled={isStepValid}
                 className="bg-green-500 hover:bg-green-600 text-white"
               >
-                Complete Setup
-                <Check className="h-4 w-4 ml-2" />
+                {
+                  isLoding ? (<>
+                    <LoaderIcon className="animate-spin"/>
+                  </>) : (<>
+                  Complete Setup
+                  <Check className="h-4 w-4 ml-2" />
+                  </>)
+                }
               </Button>
             )}
           </div>
@@ -275,6 +285,7 @@ const  DoctorOnboarding = () => {
     phone: "",
     liveURL: ''
   })
+
   const totalSteps = 3
 
   const handleInputChange = (field: string, value: string) => {
@@ -306,7 +317,7 @@ const  DoctorOnboarding = () => {
   const isStepValid = () => {
     switch (currentStep) {
       case 1:
-        return !(profileImage && doctorData.firstName && doctorData.lastName)
+        return !(profileImage.length && doctorData.firstName && doctorData.lastName)
       case 2:
         return !(doctorData.specialization)
       case 3:
@@ -343,13 +354,15 @@ const  DoctorOnboarding = () => {
               </CardHeader>
               <CardContent className="space-y-6">
 
-                <RenderAvatar getLiveURL={(url)=>{
+                <RenderAvatar 
+                  getLiveURL={(url)=>{
                   setDoctorData(prev => ({
                     ...prev,
                     liveURL: url
                   }));
-                  setProfileImage(url)
-                }}/>
+                  }}
+                  localPreview={setProfileImage}
+                />
 
                 {/* Name Fields */}
                 <div className="grid grid-cols-2 gap-4">
@@ -536,7 +549,9 @@ const  DoctorOnboarding = () => {
 const PatientOnboarding = () => {
     const { user, setOnBoarded } = userStore()
   const [currentStep, setCurrentStep] = useState(1)
-  const [profileImage, setProfileImage] = useState<string>("")
+  const [profileImage, setProfileImage] = useState<string>("");
+
+  const [isCompleteRegistrationLoading, setIsCompleteRegistrationLoading] = useState<boolean>(false);
   const [patientData, setPatientData] = useState({
     firstName: "",
     lastName: "",
@@ -555,7 +570,8 @@ const PatientOnboarding = () => {
     insuranceProvider: "",
     policyNumber: "",
     primaryPhysician: "",
-    liveURL: ''
+    liveURL: '',
+    localPreviewURL: ''
   })
 
   const [preferences, setPreferences] = useState({
@@ -582,6 +598,8 @@ const PatientOnboarding = () => {
 
   const handleComplete = async () => {
     
+    setIsCompleteRegistrationLoading(true)
+
     try {
       
         const patientsRef = collection(db, "patient");
@@ -609,6 +627,9 @@ const PatientOnboarding = () => {
     } catch (error) {
       console.log(error)
     }
+    finally{
+      setIsCompleteRegistrationLoading(false)
+    }
         
         
   }
@@ -616,7 +637,7 @@ const PatientOnboarding = () => {
   const isStepValid = () => {
     switch (currentStep) {
       case 1:
-        return !(patientData.email && patientData.phone && patientData.liveURL)
+        return !(patientData.email && patientData.phone && profileImage.length)
       case 2:
         return !(patientData.dateOfBirth && patientData.gender)
       case 3:
@@ -658,8 +679,9 @@ const PatientOnboarding = () => {
                     ...prev,
                     liveURL: url
                   }));
-                  setProfileImage(url)
-                }}/>
+                }}
+                  localPreview={setProfileImage}
+                />
 
 
                 {/* Contact Information */}
@@ -674,6 +696,7 @@ const PatientOnboarding = () => {
                       type="email"
                       value={patientData.email}
                       readOnly
+                      required
                       placeholder="Enter your email address"
                       className="text-[#344054] border-gray-200"
                     />
@@ -827,11 +850,12 @@ const PatientOnboarding = () => {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="bloodType" className="text-[#344054]">
-                      Blood Type
+                      Blood Type *
                     </Label>
                     <Select
                       value={patientData.bloodType}
                       onValueChange={(value) => handleInputChange("bloodType", value)}
+                      required
                     >
                       <SelectTrigger className="text-[#344054] border-gray-200">
                         <SelectValue placeholder="Select blood type" />
@@ -1042,6 +1066,7 @@ const PatientOnboarding = () => {
             isStepValid={isStepValid()}
             setSteps={setCurrentStep}
             totalSteps={totalSteps}
+            isLoding={isCompleteRegistrationLoading}
           />
         </Card>
 

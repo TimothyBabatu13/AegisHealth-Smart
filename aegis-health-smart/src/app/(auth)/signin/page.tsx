@@ -8,6 +8,7 @@ import { userStore } from "@/stores/userStore";
 import { userDetailsType } from "@/types/types";
 import { LoginToExistingAccount } from "@/utils/firebase";
 import formatFirebaseError from "@/utils/formatFirebaseError";
+import { LoaderIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -22,6 +23,7 @@ const Page = () => {
         password: "",
     });
     const [loading, setIsLoading] = useState<boolean>(false);
+
     const { toast } = useToast();
 
     const handleChange = (e: any): void => {
@@ -51,13 +53,19 @@ const Page = () => {
                     setId(res.data?.uid);
                     if (res.data?.uid) {
                         route.push("/");
+                        setIsLoading(false);
                     }
+                    setIsLoading(false);
                 })
-                .catch((err) => console.log(err));
-            setIsLoading(false);
+                .catch((err) => {
+                    console.log(err)
+                    setIsLoading(false);
+                });
         } catch (error) {
             console.log(error);
+            setIsLoading(false);
         }
+
     };
     return (
         <>
@@ -75,7 +83,7 @@ const Page = () => {
                         height={145}
                         width={127}
                         className="mx-auto h-10 w-auto"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                        src="/logo.jpeg"
                         alt="Your Company"
                         priority
                     />
@@ -123,7 +131,7 @@ const Page = () => {
                                     loading ? "bg-indigo-500" : "bg-indigo-600"
                                 } px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
                             >
-                                Sign in
+                                {loading ? <LoaderIcon className="animate-spin"/> : "Sign in"}
                             </button>
                         </div>
                     </form>

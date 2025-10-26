@@ -6,8 +6,10 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { userDetailsType } from "@/types/types";
 import formatFirebaseError from "@/utils/formatFirebaseError";
+import { LoaderIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 
 const Page = () => {
@@ -24,6 +26,7 @@ const Page = () => {
             [e.target.name]: e.target.value,
         }));
     };
+    const router = useRouter();
 
     const handleSignUp = async (e: FormEvent)=> {
         e.preventDefault();
@@ -40,16 +43,20 @@ const Page = () => {
                     isDoctor: userDetails.isDoctor
                 }),
             });
-            const { result, status } = await res.json();
-            console.log(result);
+            const { result, status } = await res.json() as {result: any, status: number};
+            if(status === 201){
+                router.push('/signin')
+            }
             toast({
                 description: formatFirebaseError(result),
                 variant: status === 500 ? "destructive" : "default",
             });
             
-            setIsLoading(false);
         } catch (error) {
             console.log(error);
+        }
+        finally{
+            setIsLoading(false);
         }
     };
     return (
@@ -68,9 +75,10 @@ const Page = () => {
                         height={145}
                         width={127}
                         className="mx-auto h-10 w-auto"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                        src="/logo.jpeg"
                         alt="Your Company"
                         priority
+                        draggable={false}
                     />
                     <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
                         Sign up and have an account
@@ -131,7 +139,7 @@ const Page = () => {
                                 } px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
                                 disabled={loading}
                             >
-                                Sign up {loading ? <>LOADING...</> : ""}
+                                {loading ? <LoaderIcon className="animate-spin"/> : "Sign up"}
                             </button>
                         </div>
                     </form>
